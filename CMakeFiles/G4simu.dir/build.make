@@ -161,9 +161,22 @@ CMakeFiles/G4simu.dir/src/FMC.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/G4simu.dir/src/FMC.cc.s"
 	/cvmfs/sft.cern.ch/lcg/releases/gcc/8.3.0-cebb0/x86_64-centos7/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /user/glegu/testsim/modusim/src/FMC.cc -o CMakeFiles/G4simu.dir/src/FMC.cc.s
 
+CMakeFiles/G4simu.dir/src/Particle.cc.o: CMakeFiles/G4simu.dir/flags.make
+CMakeFiles/G4simu.dir/src/Particle.cc.o: src/Particle.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/G4simu.dir/src/Particle.cc.o"
+	/cvmfs/sft.cern.ch/lcg/releases/gcc/8.3.0-cebb0/x86_64-centos7/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/G4simu.dir/src/Particle.cc.o -c /user/glegu/testsim/modusim/src/Particle.cc
+
+CMakeFiles/G4simu.dir/src/Particle.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/G4simu.dir/src/Particle.cc.i"
+	/cvmfs/sft.cern.ch/lcg/releases/gcc/8.3.0-cebb0/x86_64-centos7/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /user/glegu/testsim/modusim/src/Particle.cc > CMakeFiles/G4simu.dir/src/Particle.cc.i
+
+CMakeFiles/G4simu.dir/src/Particle.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/G4simu.dir/src/Particle.cc.s"
+	/cvmfs/sft.cern.ch/lcg/releases/gcc/8.3.0-cebb0/x86_64-centos7/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /user/glegu/testsim/modusim/src/Particle.cc -o CMakeFiles/G4simu.dir/src/Particle.cc.s
+
 CMakeFiles/G4simu.dir/src/PhysicsList.cc.o: CMakeFiles/G4simu.dir/flags.make
 CMakeFiles/G4simu.dir/src/PhysicsList.cc.o: src/PhysicsList.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/G4simu.dir/src/PhysicsList.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/G4simu.dir/src/PhysicsList.cc.o"
 	/cvmfs/sft.cern.ch/lcg/releases/gcc/8.3.0-cebb0/x86_64-centos7/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/G4simu.dir/src/PhysicsList.cc.o -c /user/glegu/testsim/modusim/src/PhysicsList.cc
 
 CMakeFiles/G4simu.dir/src/PhysicsList.cc.i: cmake_force
@@ -176,7 +189,7 @@ CMakeFiles/G4simu.dir/src/PhysicsList.cc.s: cmake_force
 
 CMakeFiles/G4simu.dir/src/PhysicsMessenger.cc.o: CMakeFiles/G4simu.dir/flags.make
 CMakeFiles/G4simu.dir/src/PhysicsMessenger.cc.o: src/PhysicsMessenger.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/G4simu.dir/src/PhysicsMessenger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/G4simu.dir/src/PhysicsMessenger.cc.o"
 	/cvmfs/sft.cern.ch/lcg/releases/gcc/8.3.0-cebb0/x86_64-centos7/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/G4simu.dir/src/PhysicsMessenger.cc.o -c /user/glegu/testsim/modusim/src/PhysicsMessenger.cc
 
 CMakeFiles/G4simu.dir/src/PhysicsMessenger.cc.i: cmake_force
@@ -189,7 +202,7 @@ CMakeFiles/G4simu.dir/src/PhysicsMessenger.cc.s: cmake_force
 
 CMakeFiles/G4simu.dir/src/PrimaryGeneratorAction.cc.o: CMakeFiles/G4simu.dir/flags.make
 CMakeFiles/G4simu.dir/src/PrimaryGeneratorAction.cc.o: src/PrimaryGeneratorAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/G4simu.dir/src/PrimaryGeneratorAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/G4simu.dir/src/PrimaryGeneratorAction.cc.o"
 	/cvmfs/sft.cern.ch/lcg/releases/gcc/8.3.0-cebb0/x86_64-centos7/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/G4simu.dir/src/PrimaryGeneratorAction.cc.o -c /user/glegu/testsim/modusim/src/PrimaryGeneratorAction.cc
 
 CMakeFiles/G4simu.dir/src/PrimaryGeneratorAction.cc.i: cmake_force
@@ -202,7 +215,7 @@ CMakeFiles/G4simu.dir/src/PrimaryGeneratorAction.cc.s: cmake_force
 
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: CMakeFiles/G4simu.dir/flags.make
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: src/RunAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/G4simu.dir/src/RunAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/G4simu.dir/src/RunAction.cc.o"
 	/cvmfs/sft.cern.ch/lcg/releases/gcc/8.3.0-cebb0/x86_64-centos7/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/G4simu.dir/src/RunAction.cc.o -c /user/glegu/testsim/modusim/src/RunAction.cc
 
 CMakeFiles/G4simu.dir/src/RunAction.cc.i: cmake_force
@@ -215,7 +228,7 @@ CMakeFiles/G4simu.dir/src/RunAction.cc.s: cmake_force
 
 CMakeFiles/G4simu.dir/src/RunActionMessenger.cc.o: CMakeFiles/G4simu.dir/flags.make
 CMakeFiles/G4simu.dir/src/RunActionMessenger.cc.o: src/RunActionMessenger.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/G4simu.dir/src/RunActionMessenger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/G4simu.dir/src/RunActionMessenger.cc.o"
 	/cvmfs/sft.cern.ch/lcg/releases/gcc/8.3.0-cebb0/x86_64-centos7/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/G4simu.dir/src/RunActionMessenger.cc.o -c /user/glegu/testsim/modusim/src/RunActionMessenger.cc
 
 CMakeFiles/G4simu.dir/src/RunActionMessenger.cc.i: cmake_force
@@ -228,7 +241,7 @@ CMakeFiles/G4simu.dir/src/RunActionMessenger.cc.s: cmake_force
 
 CMakeFiles/G4simu.dir/src/SensitiveDetector.cc.o: CMakeFiles/G4simu.dir/flags.make
 CMakeFiles/G4simu.dir/src/SensitiveDetector.cc.o: src/SensitiveDetector.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/G4simu.dir/src/SensitiveDetector.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/G4simu.dir/src/SensitiveDetector.cc.o"
 	/cvmfs/sft.cern.ch/lcg/releases/gcc/8.3.0-cebb0/x86_64-centos7/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/G4simu.dir/src/SensitiveDetector.cc.o -c /user/glegu/testsim/modusim/src/SensitiveDetector.cc
 
 CMakeFiles/G4simu.dir/src/SensitiveDetector.cc.i: cmake_force
@@ -241,7 +254,7 @@ CMakeFiles/G4simu.dir/src/SensitiveDetector.cc.s: cmake_force
 
 CMakeFiles/G4simu.dir/src/StackingAction.cc.o: CMakeFiles/G4simu.dir/flags.make
 CMakeFiles/G4simu.dir/src/StackingAction.cc.o: src/StackingAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/G4simu.dir/src/StackingAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/G4simu.dir/src/StackingAction.cc.o"
 	/cvmfs/sft.cern.ch/lcg/releases/gcc/8.3.0-cebb0/x86_64-centos7/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/G4simu.dir/src/StackingAction.cc.o -c /user/glegu/testsim/modusim/src/StackingAction.cc
 
 CMakeFiles/G4simu.dir/src/StackingAction.cc.i: cmake_force
@@ -254,7 +267,7 @@ CMakeFiles/G4simu.dir/src/StackingAction.cc.s: cmake_force
 
 CMakeFiles/G4simu.dir/src/SteppingAction.cc.o: CMakeFiles/G4simu.dir/flags.make
 CMakeFiles/G4simu.dir/src/SteppingAction.cc.o: src/SteppingAction.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/G4simu.dir/src/SteppingAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/G4simu.dir/src/SteppingAction.cc.o"
 	/cvmfs/sft.cern.ch/lcg/releases/gcc/8.3.0-cebb0/x86_64-centos7/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/G4simu.dir/src/SteppingAction.cc.o -c /user/glegu/testsim/modusim/src/SteppingAction.cc
 
 CMakeFiles/G4simu.dir/src/SteppingAction.cc.i: cmake_force
@@ -267,7 +280,7 @@ CMakeFiles/G4simu.dir/src/SteppingAction.cc.s: cmake_force
 
 CMakeFiles/G4simu.dir/src/fileMerger.cc.o: CMakeFiles/G4simu.dir/flags.make
 CMakeFiles/G4simu.dir/src/fileMerger.cc.o: src/fileMerger.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/G4simu.dir/src/fileMerger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/G4simu.dir/src/fileMerger.cc.o"
 	/cvmfs/sft.cern.ch/lcg/releases/gcc/8.3.0-cebb0/x86_64-centos7/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/G4simu.dir/src/fileMerger.cc.o -c /user/glegu/testsim/modusim/src/fileMerger.cc
 
 CMakeFiles/G4simu.dir/src/fileMerger.cc.i: cmake_force
@@ -280,7 +293,7 @@ CMakeFiles/G4simu.dir/src/fileMerger.cc.s: cmake_force
 
 CMakeFiles/G4simu.dir/src/stdHit.cc.o: CMakeFiles/G4simu.dir/flags.make
 CMakeFiles/G4simu.dir/src/stdHit.cc.o: src/stdHit.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/G4simu.dir/src/stdHit.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/G4simu.dir/src/stdHit.cc.o"
 	/cvmfs/sft.cern.ch/lcg/releases/gcc/8.3.0-cebb0/x86_64-centos7/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/G4simu.dir/src/stdHit.cc.o -c /user/glegu/testsim/modusim/src/stdHit.cc
 
 CMakeFiles/G4simu.dir/src/stdHit.cc.i: cmake_force
@@ -301,6 +314,7 @@ G4simu_OBJECTS = \
 "CMakeFiles/G4simu.dir/src/EventAction.cc.o" \
 "CMakeFiles/G4simu.dir/src/EventData.cc.o" \
 "CMakeFiles/G4simu.dir/src/FMC.cc.o" \
+"CMakeFiles/G4simu.dir/src/Particle.cc.o" \
 "CMakeFiles/G4simu.dir/src/PhysicsList.cc.o" \
 "CMakeFiles/G4simu.dir/src/PhysicsMessenger.cc.o" \
 "CMakeFiles/G4simu.dir/src/PrimaryGeneratorAction.cc.o" \
@@ -323,6 +337,7 @@ G4simu: CMakeFiles/G4simu.dir/src/DetectorMessenger.cc.o
 G4simu: CMakeFiles/G4simu.dir/src/EventAction.cc.o
 G4simu: CMakeFiles/G4simu.dir/src/EventData.cc.o
 G4simu: CMakeFiles/G4simu.dir/src/FMC.cc.o
+G4simu: CMakeFiles/G4simu.dir/src/Particle.cc.o
 G4simu: CMakeFiles/G4simu.dir/src/PhysicsList.cc.o
 G4simu: CMakeFiles/G4simu.dir/src/PhysicsMessenger.cc.o
 G4simu: CMakeFiles/G4simu.dir/src/PrimaryGeneratorAction.cc.o
@@ -422,7 +437,7 @@ G4simu: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-g
 G4simu: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/lib64/libG4global.so
 G4simu: /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/libCLHEP-2.4.1.0.so
 G4simu: CMakeFiles/G4simu.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable G4simu"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/user/glegu/testsim/modusim/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable G4simu"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/G4simu.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

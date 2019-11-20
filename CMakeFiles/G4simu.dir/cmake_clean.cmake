@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/G4simu.dir/src/EventAction.cc.o"
   "CMakeFiles/G4simu.dir/src/EventData.cc.o"
   "CMakeFiles/G4simu.dir/src/FMC.cc.o"
+  "CMakeFiles/G4simu.dir/src/Particle.cc.o"
   "CMakeFiles/G4simu.dir/src/PhysicsList.cc.o"
   "CMakeFiles/G4simu.dir/src/PhysicsMessenger.cc.o"
   "CMakeFiles/G4simu.dir/src/PrimaryGeneratorAction.cc.o"

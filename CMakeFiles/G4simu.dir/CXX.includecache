@@ -8711,6 +8711,8 @@ algorithm
 -
 FMC.hh
 /user/glegu/testsim/modusim/src/FMC.hh
+Particle.hh
+/user/glegu/testsim/modusim/src/Particle.hh
 
 /user/glegu/testsim/modusim/src/AnalysisMessenger.cc
 G4ThreeVector.hh
@@ -8873,15 +8875,29 @@ EventData.hh
 /user/glegu/testsim/modusim/src/EventData.hh
 
 /user/glegu/testsim/modusim/src/FMC.cc
-numeric
--
 FMC.hh
 /user/glegu/testsim/modusim/src/FMC.hh
 G4UImanager.hh
 /user/glegu/testsim/modusim/src/G4UImanager.hh
 DetectorConstruction.hh
 /user/glegu/testsim/modusim/src/DetectorConstruction.hh
-algorithm
+
+/user/glegu/testsim/modusim/src/Particle.cc
+Particle.hh
+/user/glegu/testsim/modusim/src/Particle.hh
+G4NistManager.hh
+-
+DetectorConstruction.hh
+/user/glegu/testsim/modusim/src/DetectorConstruction.hh
+G4EmCalculator.hh
+-
+cmath
+-
+G4Material.hh
+-
+RunAction.hh
+-
+random
 -
 
 /user/glegu/testsim/modusim/src/PhysicsList.cc
@@ -9189,7 +9205,33 @@ globals.hh
 -
 G4ThreeVector.hh
 -
+string
+-
 vector
+-
+algorithm
+-
+numeric
+-
+
+include/Particle.hh
+globals.hh
+-
+G4ThreeVector.hh
+-
+string
+-
+vector
+-
+algorithm
+-
+numeric
+-
+G4Material.hh
+-
+G4NistManager.hh
+-
+G4EmCalculator.hh
 -
 
 include/PhysicsList.hh

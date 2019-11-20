@@ -29,6 +29,7 @@
 #include "DetectorConstruction.hh"
 #include <algorithm>
 #include "FMC.hh"
+#include "Particle.hh"
 
 using namespace CLHEP;
 
@@ -173,6 +174,9 @@ AnalysisManager::BeginOfEvent(const G4Event *pEvent)
     
     FMC myFMC;
 
+    Particle myParticle;
+    myParticle.Print();
+
     // The path length to the shortest intersection is used to calculate the weight
     vector<G4double> s_side  = myFMC.intersect_side(pos,mom,keepevent,dFVouterRadius,dFVHalfZ);
     vector<G4double> s_plane = myFMC.intersect_plane(pos,mom,keepevent,dFVouterRadius,dFVHalfZ);       
@@ -183,7 +187,7 @@ AnalysisManager::BeginOfEvent(const G4Event *pEvent)
     if (!keepevent)
 	{   G4UImanager *UImanager = G4UImanager::GetUIpointer();
         UImanager->ApplyCommand("/event/abort");
-    }
+    }    
 
 }
 

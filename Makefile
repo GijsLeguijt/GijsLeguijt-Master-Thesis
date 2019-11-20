@@ -385,6 +385,33 @@ src/FMC.cc.s:
 	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/FMC.cc.s
 .PHONY : src/FMC.cc.s
 
+src/Particle.o: src/Particle.cc.o
+
+.PHONY : src/Particle.o
+
+# target to build an object file
+src/Particle.cc.o:
+	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/Particle.cc.o
+.PHONY : src/Particle.cc.o
+
+src/Particle.i: src/Particle.cc.i
+
+.PHONY : src/Particle.i
+
+# target to preprocess a source file
+src/Particle.cc.i:
+	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/Particle.cc.i
+.PHONY : src/Particle.cc.i
+
+src/Particle.s: src/Particle.cc.s
+
+.PHONY : src/Particle.s
+
+# target to generate assembly for a file
+src/Particle.cc.s:
+	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/Particle.cc.s
+.PHONY : src/Particle.cc.s
+
 src/PhysicsList.o: src/PhysicsList.cc.o
 
 .PHONY : src/PhysicsList.o
@@ -692,6 +719,9 @@ help:
 	@echo "... src/FMC.o"
 	@echo "... src/FMC.i"
 	@echo "... src/FMC.s"
+	@echo "... src/Particle.o"
+	@echo "... src/Particle.i"
+	@echo "... src/Particle.s"
 	@echo "... src/PhysicsList.o"
 	@echo "... src/PhysicsList.i"
 	@echo "... src/PhysicsList.s"

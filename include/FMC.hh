@@ -3,6 +3,7 @@
 
 #include <globals.hh>
 #include <G4ThreeVector.hh>
+#include <string>
 #include <vector>
 #include <algorithm>
 #include <numeric>
@@ -19,5 +20,4 @@ public:
 
 };
 
-#endif 
-
+#endif
