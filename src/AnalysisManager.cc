@@ -175,6 +175,8 @@ AnalysisManager::BeginOfEvent(const G4Event *pEvent)
     FMC myFMC;
 
     Particle myParticle;
+    G4int currentseed = myParticle.getRandom();
+    myParticle.setRandom(currentseed + 1);
     myParticle.Print();
 
     // The path length to the shortest intersection is used to calculate the weight

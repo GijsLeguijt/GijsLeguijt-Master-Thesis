@@ -23,12 +23,14 @@ class RunActionMessenger: public G4UImessenger
 public:
   RunActionMessenger(RunAction *pRunAction);
   ~RunActionMessenger();
+  G4int getiDef() { return m_iDef; }
   
   void SetNewValue(G4UIcommand *pCommand, G4String hNewValues);
 private:
   RunAction           *m_pRunAction;
   G4UIdirectory              *m_pDirectory;
   G4UIcmdWithAnInteger       *m_pRanSeedCmd;
+  G4int m_iDef;
 };
 
 #endif 

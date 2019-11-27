@@ -5,19 +5,24 @@
 #include <cmath>
 #include <G4Material.hh>
 #include <RunAction.hh>
-#include <random>
+#include <Randomize.hh>
+#include <G4KleinNishinaCompton.hh>
+#include <G4MaterialCutsCouple.hh>
+#include <G4DynamicParticle.hh>
+#include <G4Track.hh>
+#include <G4ParticleDefinition.hh>
+#include <G4ParticleTable.hh>
 
 //__________________________________________________________________________________________________________
 
 Particle::Particle()
-{
-
+{   
 }
 
 //__________________________________________________________________________________________________________
 
 void Particle::Print()
-{        
+{   //G4cout << G4UniformRand() << " " << m_random << G4endl;
     G4cout << "particle::print PARTICLE STATUS"                             << G4endl
            << "particle::print type = "               << m_type             << G4endl
            << "particle::print energy = "             << m_energy << " keV" << G4endl
@@ -205,7 +210,7 @@ void Particle::Propagate()
                         // update the weight for forcing to reach the FV
                         m_weight *= Get_att_probability(s_fiducial_entry);
                         
-                        //self.update_particle('transport',s_fiducial_entry,0,0,1.0) //<- MAKEN
+                        Update_particle(s_fiducial_entry,"transport"); //look into this! returns a string, hopefully this is just ignored
                         // maximal s will be lower, as we reached the FV, subtract the travelled distance
                         s_max -= s_fiducial_entry;
                         s_max_fiducial = s_fiducial_exit-s_fiducial_entry; // distance of path through FV
@@ -250,7 +255,7 @@ void Particle::Propagate()
             if(s_gen < s_max) // interaction within the detector
             {
                 // scatter the particle, either PE or compton
-                std::string process = Scatter(s_gen); //MAKEN!
+                std::string process = Update_particle(s_gen);
                     
                 if (process == "pho") // energy deposit is too high, not interested
                 {
@@ -297,12 +302,43 @@ G4double Particle::Generate_interaction_point(G4double smax) //default for smax 
 
 //__________________________________________________________________________________________________________
 
-std::string Particle::Scatter(G4double s)
+std::string Particle::Update_particle(G4double s_scatter, std::string process)
 {   /*
-     * EMPTY
+     * Combination of "scatter" and "update_particle" from python code
+     * Something with xint!!!!
+     * Default of process = "", as in, no transportation
      */
 
-    std::string process = Select_scatter_process();
+    if (process == "") //if no process pre-selected, get either compton or PE
+    {   process = Select_scatter_process();
+    }
+
+    m_x0 += s_scatter * m_direction; //get to the new position
+    G4double edep;
+
+    if (process == "inc")
+    {   //Inverse Compton scattering
+        edep = Do_compton();
+
+        Save_interaction(m_x0, edep, process); //save interaction data
+    }
+    else if (process == "pho")
+    {   //Photo-electric effect, all energy is deposited
+        edep        = m_energy;
+        m_nscatter += 1;
+        m_edep     += edep;
+        m_energy    = 0;
+
+        Save_interaction(m_x0, edep, process); //save interaction data
+    }
+    else if (process == "transport")
+    {   //Just transportation, nothing additional happens
+    }
+    else
+    {
+        G4cout << "Invalid process name, leave empty or use transport, pho or inc" << G4endl;
+    }
+    
     return process;
 }
 
@@ -318,15 +354,14 @@ std::string Particle::Select_scatter_process()
     std::string process;
 
     // Cross-sections for compton and PE, units don't matter as we need a fraction    
-    G4double sigma_compt = emCalc.ComputeCrossSectionPerVolume(m_energy,"gamma","compt",m_material->GetName(),0);
-    G4double sigma_phot  = emCalc.ComputeCrossSectionPerVolume(m_energy,"gamma","phot", m_material->GetName(),0);
+    G4double sigma_compt = emCalc.ComputeCrossSectionPerVolume(m_energy,m_type,"compt",m_material->GetName(),0);
+    G4double sigma_phot  = emCalc.ComputeCrossSectionPerVolume(m_energy,m_type,"phot", m_material->GetName(),0);
     G4double sigma_total = sigma_compt + sigma_phot;
     
     G4double frac        = sigma_compt / sigma_total;
 
     if (m_edep_max < m_energy)
-    // if the maximum energy deposit is smaller than the total kinetic energy, PE is switched off and the weight
-    // is updated
+    // if the maximum energy deposit is smaller than the total kinetic energy, PE is off and the weight updated
     {    
         process   = "inc";
         m_weight *= frac;
@@ -360,27 +395,73 @@ G4double Particle::Random_uniform(G4double min, G4double max)
      * Returns a number randomly picked from a uniform distribution on interval [min, max]
      */
     
-    G4double seed = 5;
-    std::mt19937 gen(seed); //Standard mersenne_twister_engine seeded with seed
-    std::uniform_real_distribution<> random(min, max); //random distribution
+    G4double rand = G4UniformRand();
     
-    return random(gen);
+    return min + (max - min) * rand;
+}
+
+//__________________________________________________________________________________________________________
+
+G4double Particle::Do_compton()
+{   /*
+     * "look into this!"
+     * Weights???
+     * Check if dynamic particle is updated???
+     */
+
+    const G4ParticleDefinition* part_def = G4ParticleTable::GetParticleTable()->FindParticle(m_type);
+
+    G4DynamicParticle part_dyn = G4DynamicParticle(part_def,m_direction,m_energy);
+    G4DynamicParticle * ppart_dyn = &part_dyn; //pointer to particle
+    G4double time = 1; //don't need time but is needed to make a track -> look into this!
+    G4double tmin = 0; //dont need minimal time but is needed for secondaries -> look into this!
+    G4double maxEnergy = 10000000; //look into this!, has to do with weight? -> max scatter angle etc
+
+    G4Track newtrack = G4Track(ppart_dyn,time,m_x0);
+
+    G4MaterialCutsCouple mat_cuts = G4MaterialCutsCouple(m_material);
+    G4MaterialCutsCouple * pmat_cuts = &mat_cuts; //pointer to material cuts
+
+    std::vector< G4DynamicParticle * > vec_elec = {};
+    std::vector< G4DynamicParticle * > * pvec_elec = &vec_elec;
+
+    G4KleinNishinaCompton KNCompt = G4KleinNishinaCompton();
+
+    KNCompt.SampleSecondaries (pvec_elec, pmat_cuts, ppart_dyn, tmin, maxEnergy);
+
+    m_direction = ppart_dyn->GetMomentumDirection();
+    G4double new_energy = ppart_dyn->GetKineticEnergy();
+
+    G4double edep = (m_energy - new_energy);
+    m_edep += edep;
+    m_energy = new_energy;
+    m_nscatter += 1;
+
+    newtrack.SetTrackStatus(fStopAndKill);//kill the track as I'm not sure if it otherwise is simulated
+
+    return edep;
+}
+
+//__________________________________________________________________________________________________________
+
+void Particle::Save_interaction(G4ThreeVector position, G4double deposit, std::string process)
+{   /*
+     * Saves position, deposited energy and the process of an interaction
+     */
+
+    m_pos_int.push_back(position);
+    m_edep_int.push_back(deposit);
+    m_pro_int.push_back(process);
 }
 
 
-
-
-
-
 /* To do:
-Zoeken op "//self.update_particle('transport',s_fiducial_entry,0,0,1.0)"
-Zoeken op "xint" in .hh, moet anders, gesplit in meerdere?
+Zoeken op "look into this!"
 
 
 
-
-Zoeken op: "LXe" en zorgen dat dit correcte materiaal is
-Zoeken op "seed" en zorgen dat dit zelfde is als in run messenger en niet elk deeltje hetzelfde
+Zoeken op: "LXe" en zorgen dat dit correcte materiaal is (ook in .hh)
+Zorgen bij aanroepen functie dat elk deeltje nieuw seed krijgt + 1e zelfde als run messenger
 Zoeken op "std::string Particle::Select_scatter_process()", compton vs inverse?
 Zoeken op "redundant"
 */
