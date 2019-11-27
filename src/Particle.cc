@@ -305,8 +305,10 @@ G4double Particle::Generate_interaction_point(G4double smax) //default for smax 
 std::string Particle::Update_particle(G4double s_scatter, std::string process)
 {   /*
      * Combination of "scatter" and "update_particle" from python code
-     * Something with xint!!!!
      * Default of process = "", as in, no transportation
+     * 
+     * Will transport a "time" s_scatter and scatter via inc or PE, unless process equals
+     * transport, in which case only the transportation takes place
      */
 
     if (process == "") //if no process pre-selected, get either compton or PE
