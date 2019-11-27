@@ -406,40 +406,41 @@ G4double Particle::Random_uniform(G4double min, G4double max)
 
 G4double Particle::Do_compton()
 {   /*
-     * "look into this!"
+     * look into this!
      * Weights???
      * Check if dynamic particle is updated???
      */
 
     const G4ParticleDefinition* part_def = G4ParticleTable::GetParticleTable()->FindParticle(m_type);
 
-    G4DynamicParticle part_dyn = G4DynamicParticle(part_def,m_direction,m_energy);
+    G4DynamicParticle    part_dyn = G4DynamicParticle(part_def,m_direction,m_energy);
     G4DynamicParticle * ppart_dyn = &part_dyn; //pointer to particle
-    G4double time = 1; //don't need time but is needed to make a track -> look into this!
-    G4double tmin = 0; //dont need minimal time but is needed for secondaries -> look into this!
+    
+    G4double time      = 1; //don't need time but is needed to make a track -> look into this!
+    G4double tmin      = 0; //dont need minimal time but is needed for secondaries -> look into this!
     G4double maxEnergy = 10000000; //look into this!, has to do with weight? -> max scatter angle etc
 
     G4Track newtrack = G4Track(ppart_dyn,time,m_x0);
 
-    G4MaterialCutsCouple mat_cuts = G4MaterialCutsCouple(m_material);
+    G4MaterialCutsCouple    mat_cuts = G4MaterialCutsCouple(m_material);
     G4MaterialCutsCouple * pmat_cuts = &mat_cuts; //pointer to material cuts
 
-    std::vector< G4DynamicParticle * > vec_elec = {};
+    std::vector< G4DynamicParticle * >    vec_elec = {};
     std::vector< G4DynamicParticle * > * pvec_elec = &vec_elec;
 
     G4KleinNishinaCompton KNCompt = G4KleinNishinaCompton();
 
     KNCompt.SampleSecondaries (pvec_elec, pmat_cuts, ppart_dyn, tmin, maxEnergy);
 
-    m_direction = ppart_dyn->GetMomentumDirection();
+    m_direction         = ppart_dyn->GetMomentumDirection();
     G4double new_energy = ppart_dyn->GetKineticEnergy();
 
     G4double edep = (m_energy - new_energy);
-    m_edep += edep;
-    m_energy = new_energy;
+    m_edep     += edep;
+    m_energy    = new_energy;
     m_nscatter += 1;
 
-    newtrack.SetTrackStatus(fStopAndKill);//kill the track as I'm not sure if it otherwise is simulated
+    newtrack.SetTrackStatus(fStopAndKill); //kill the track as I'm not sure if it otherwise is simulated
 
     return edep;
 }
