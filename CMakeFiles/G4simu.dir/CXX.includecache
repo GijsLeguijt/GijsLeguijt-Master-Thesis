@@ -332,6 +332,10 @@ globals.hh
 
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AtomicShellEnumerator.hh
 
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AtomicShells.hh
+globals.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
+
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AutoLock.hh
 G4Threading.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Threading.hh
@@ -744,6 +748,18 @@ G4DynamicParticle.hh
 G4VAtomDeexcitation.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VAtomDeexcitation.hh
 
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmCorrections.hh
+CLHEP/Units/PhysicalConstants.h
+-
+globals.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
+G4ionEffectiveCharge.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ionEffectiveCharge.hh
+G4Material.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Material.hh
+G4ParticleDefinition.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.hh
+
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmElementSelector.hh
 globals.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
@@ -788,6 +804,26 @@ G4UIcmdWithABool.hh
 G4UIcmdWithADouble.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UIcmdWithADouble.hh
 
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmModelManager.hh
+globals.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
+G4DataVector.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4DataVector.hh
+G4EmTableType.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmTableType.hh
+G4EmProcessSubType.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmProcessSubType.hh
+G4Region.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Region.hh
+G4VEmModel.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmModel.hh
+G4VEmFluctuationModel.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmFluctuationModel.hh
+G4DynamicParticle.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4DynamicParticle.hh
+iostream
+-
+
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmParameters.hh
 globals.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
@@ -818,6 +854,8 @@ G4EmParticleList.hh
 globals.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
 
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmProcessSubType.hh
+
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmSaturation.hh
 globals.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
@@ -835,6 +873,8 @@ G4EmParticleList.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmParticleList.hh
 globals.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
+
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmTableType.hh
 
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EnergyRangeManager.hh
 G4HadronicInteraction.hh
@@ -1382,9 +1422,13 @@ G4ios.hh
 G4ParticleDefinition.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.hh
 
-/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4KleinNishinaCompton.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4KleinNishinaModel.hh
 G4VEmModel.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmModel.hh
+G4LorentzVector.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LorentzVector.hh
+vector
+-
 
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Lambda.hh
 globals.hh
@@ -1479,6 +1523,34 @@ globals.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
 CLHEP/Vector/LorentzVector.h
 -
+
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LossTableBuilder.hh
+vector
+-
+globals.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
+G4PhysicsTable.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsTable.hh
+
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LossTableManager.hh
+map
+-
+vector
+-
+globals.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
+G4ThreadLocalSingleton.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ThreadLocalSingleton.hh
+G4VEnergyLossProcess.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEnergyLossProcess.hh
+G4EmCorrections.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmCorrections.hh
+G4LossTableBuilder.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LossTableBuilder.hh
+G4VAtomDeexcitation.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VAtomDeexcitation.hh
+G4VSubCutProducer.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VSubCutProducer.hh
 
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MCCIndexConversionTable.hh
 vector
@@ -2160,6 +2232,22 @@ G4ThreeVector.hh
 G4VParticleChange.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VParticleChange.hh
 
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleChangeForGamma.hh
+globals.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
+G4ios.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ios.hh
+G4VParticleChange.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VParticleChange.hh
+
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleChangeForLoss.hh
+globals.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
+G4ios.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ios.hh
+G4VParticleChange.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VParticleChange.hh
+
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.hh
 vector
 -
@@ -2405,6 +2493,10 @@ G4GenericIon.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleWithCuts.hh
 G4ParticleDefinition.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.hh
+
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicalConstants.hh
+CLHEP/Units/PhysicalConstants.h
+-
 
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicalVolumeModel.hh
 G4VModel.hh
@@ -3352,6 +3444,10 @@ G4Types.hh
 G4String.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4String.hh
 
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4SystemOfUnits.hh
+CLHEP/Units/SystemOfUnits.h
+-
+
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4THitsCollection.hh
 G4VHitsCollection.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VHitsCollection.hh
@@ -3998,6 +4094,14 @@ G4VSolid.hh
 G4VSolid.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VSolid.hh
 
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VContinuousDiscreteProcess.hh
+globals.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
+G4ios.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ios.hh
+G4VProcess.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VProcess.hh
+
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VCrossSectionDataSet.hh
 globals.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
@@ -4075,6 +4179,32 @@ CLHEP/Random/RandomEngine.h
 -
 vector
 -
+
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEnergyLossProcess.hh
+G4VContinuousDiscreteProcess.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VContinuousDiscreteProcess.hh
+globals.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
+G4Material.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Material.hh
+G4MaterialCutsCouple.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MaterialCutsCouple.hh
+G4Track.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Track.hh
+G4EmModelManager.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmModelManager.hh
+G4UnitsTable.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UnitsTable.hh
+G4ParticleChangeForLoss.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleChangeForLoss.hh
+G4EmTableType.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmTableType.hh
+G4PhysicsTable.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsTable.hh
+G4PhysicsVector.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsVector.hh
+G4EmParameters.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmParameters.hh
 
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VFacet.hh
 iostream
@@ -4353,6 +4483,16 @@ G4GPILSelection.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VStoreNotifier.hh
 G4VNotifier.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VNotifier.hh
+
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VSubCutProducer.hh
+globals.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
+G4Step.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Step.hh
+G4Track.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Track.hh
+vector
+-
 
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VTouchable.hh
 G4Types.hh
@@ -4759,6 +4899,12 @@ iostream
 -
 globals.hh
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
+
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ionEffectiveCharge.hh
+globals.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
+G4ParticleDefinition.hh
+/cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.hh
 
 /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ios.hh
 G4Types.hh
@@ -8956,6 +9102,32 @@ G4UImanager.hh
 DetectorConstruction.hh
 /user/glegu/testsim/modusim/src/DetectorConstruction.hh
 
+/user/glegu/testsim/modusim/src/G4KleinNishinaModel.cc
+G4KleinNishinaModel.hh
+/user/glegu/testsim/modusim/src/G4KleinNishinaModel.hh
+G4PhysicalConstants.hh
+/user/glegu/testsim/modusim/src/G4PhysicalConstants.hh
+G4SystemOfUnits.hh
+/user/glegu/testsim/modusim/src/G4SystemOfUnits.hh
+G4Electron.hh
+/user/glegu/testsim/modusim/src/G4Electron.hh
+G4Gamma.hh
+/user/glegu/testsim/modusim/src/G4Gamma.hh
+Randomize.hh
+/user/glegu/testsim/modusim/src/Randomize.hh
+G4RandomDirection.hh
+/user/glegu/testsim/modusim/src/G4RandomDirection.hh
+G4DataVector.hh
+/user/glegu/testsim/modusim/src/G4DataVector.hh
+G4ParticleChangeForGamma.hh
+/user/glegu/testsim/modusim/src/G4ParticleChangeForGamma.hh
+G4VAtomDeexcitation.hh
+/user/glegu/testsim/modusim/src/G4VAtomDeexcitation.hh
+G4AtomicShells.hh
+/user/glegu/testsim/modusim/src/G4AtomicShells.hh
+G4LossTableManager.hh
+/user/glegu/testsim/modusim/src/G4LossTableManager.hh
+
 /user/glegu/testsim/modusim/src/Particle.cc
 Particle.hh
 /user/glegu/testsim/modusim/src/Particle.hh
@@ -8973,7 +9145,7 @@ RunAction.hh
 -
 Randomize.hh
 -
-G4KleinNishinaCompton.hh
+G4KleinNishinaModel.hh
 -
 G4MaterialCutsCouple.hh
 -
@@ -8984,6 +9156,8 @@ G4Track.hh
 G4ParticleDefinition.hh
 -
 G4ParticleTable.hh
+-
+G4DataVector.hh
 -
 
 /user/glegu/testsim/modusim/src/PhysicsList.cc
@@ -9024,6 +9198,8 @@ G4EmStandardPhysics.hh
 G4EmLivermorePhysics.hh
 -
 G4EmPenelopePhysics.hh
+-
+G4VEmModel.hh
 -
 PhysicsList.hh
 /user/glegu/testsim/modusim/src/PhysicsList.hh

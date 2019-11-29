@@ -18,7 +18,7 @@ class Particle
 {
 public:
     Particle();
-    void Print();
+    void Print(G4bool extended = false);
     std::vector<G4double> intersect(G4double cyl_outerRadius, G4double cyl_halfZ);
     G4double Get_att_probability(G4double distance);
     void Propagate();
@@ -68,10 +68,10 @@ public:
     void setEdep_max(G4double edep_max)                 {m_edep_max     = edep_max;}
     void setNscatter(G4int nscatter)                    {m_nscatter     = nscatter;}
     void setNscatter_max(G4int nscatter_max)            {m_nscatter_max = nscatter_max;}
-    void setRandom(G4int random)                        {m_random       = random; G4Random::setTheSeed(m_random);}
+    void setRandom(G4int random)                        {m_random       = random;}// G4Random::setTheSeed(m_random);} <- removes randomness in entire simulation :(
     void setX0(G4ThreeVector x0)                        {m_x0           = x0;}
     void setX0start(G4ThreeVector x0start)              {m_x0start      = x0start;}
-    void setdirection(G4ThreeVector direction)          {m_direction    = direction;}
+    void setDirection(G4ThreeVector direction)          {m_direction    = direction;}
     void setMaterial(G4Material * material)             {m_material     = material;}
     void setSint(std::vector<G4double> sint)            {m_sint         = sint;}    
     void setEdep_int(std::vector<G4double> edep_int)    {m_edep_int     = edep_int;}

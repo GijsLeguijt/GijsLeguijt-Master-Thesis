@@ -385,6 +385,33 @@ src/FMC.cc.s:
 	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/FMC.cc.s
 .PHONY : src/FMC.cc.s
 
+src/G4KleinNishinaModel.o: src/G4KleinNishinaModel.cc.o
+
+.PHONY : src/G4KleinNishinaModel.o
+
+# target to build an object file
+src/G4KleinNishinaModel.cc.o:
+	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/G4KleinNishinaModel.cc.o
+.PHONY : src/G4KleinNishinaModel.cc.o
+
+src/G4KleinNishinaModel.i: src/G4KleinNishinaModel.cc.i
+
+.PHONY : src/G4KleinNishinaModel.i
+
+# target to preprocess a source file
+src/G4KleinNishinaModel.cc.i:
+	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/G4KleinNishinaModel.cc.i
+.PHONY : src/G4KleinNishinaModel.cc.i
+
+src/G4KleinNishinaModel.s: src/G4KleinNishinaModel.cc.s
+
+.PHONY : src/G4KleinNishinaModel.s
+
+# target to generate assembly for a file
+src/G4KleinNishinaModel.cc.s:
+	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/G4KleinNishinaModel.cc.s
+.PHONY : src/G4KleinNishinaModel.cc.s
+
 src/Particle.o: src/Particle.cc.o
 
 .PHONY : src/Particle.o
@@ -719,6 +746,9 @@ help:
 	@echo "... src/FMC.o"
 	@echo "... src/FMC.i"
 	@echo "... src/FMC.s"
+	@echo "... src/G4KleinNishinaModel.o"
+	@echo "... src/G4KleinNishinaModel.i"
+	@echo "... src/G4KleinNishinaModel.s"
 	@echo "... src/Particle.o"
 	@echo "... src/Particle.i"
 	@echo "... src/Particle.s"

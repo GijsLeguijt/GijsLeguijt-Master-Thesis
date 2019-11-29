@@ -20,6 +20,7 @@
 #include <G4EmStandardPhysics.hh>
 #include <G4EmLivermorePhysics.hh>
 #include <G4EmPenelopePhysics.hh>
+#include <G4VEmModel.hh>
 
 
 #include "PhysicsList.hh"
@@ -117,6 +118,8 @@ PhysicsList::ConstructProcess()
         emPhysicsList = new G4EmLivermorePhysics();
     } else if (m_hEMlowEnergyModel == "empenelope"){
         emPhysicsList = new G4EmPenelopePhysics();
+    //} else if (m_hEMlowEnergyModel == "vemmodel"){
+    //    emPhysicsList = new G4VEmModel();
     } else {
         G4cout << "PhysicsList::PhysicsList() FATAL: Bad EM physics list chosen: " << m_hEMlowEnergyModel << G4endl;
         G4String msg = " Available choices are: <emstandard> <emlivermore (default)> <empenelope>";

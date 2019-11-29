@@ -168,17 +168,33 @@ AnalysisManager::BeginOfEvent(const G4Event *pEvent)
     // Getting position and momentum of the initial particle
     G4ThreeVector pos = primaryVertex->GetPosition();
     G4ThreeVector mom = primaryParticle->GetMomentumDirection();
+    G4double      ene = primaryParticle->GetKineticEnergy();
 
     // By default, the particle is not tracked, unless it intersects with the FV    
     G4bool keepevent = false;
     
-    FMC myFMC;
-
     Particle myParticle;
-    G4int currentseed = myParticle.getRandom();
-    myParticle.setRandom(currentseed + 1);
-    myParticle.Print();
+    
+    myParticle.setX0(pos);
+    myParticle.setDirection(mom);
+    myParticle.setEnergy(ene);
+    myParticle.setX0start(pos);
+    myParticle.setVrt("fiducial_scatter");
+    myParticle.setRandom(12345); //should be changed still, but not priority
+    myParticle.setDebug(true);
 
+    myParticle.Propagate();
+    myParticle.Print();
+    
+    /*G4cout << "1mm: "     << myParticle.Get_att_probability(1)     << G4endl
+           << "10mm: "    << myParticle.Get_att_probability(10)    << G4endl
+           << "100mm: "   << myParticle.Get_att_probability(100)   << G4endl
+           << "1000mm: "  << myParticle.Get_att_probability(1000)  << G4endl;*/
+
+
+
+
+    FMC myFMC;
     // The path length to the shortest intersection is used to calculate the weight
     vector<G4double> s_side  = myFMC.intersect_side(pos,mom,keepevent,dFVouterRadius,dFVHalfZ);
     vector<G4double> s_plane = myFMC.intersect_plane(pos,mom,keepevent,dFVouterRadius,dFVHalfZ);       
@@ -186,10 +202,10 @@ AnalysisManager::BeginOfEvent(const G4Event *pEvent)
     vector<G4double> s = myFMC.sort_vector(s_side, s_plane);
 
     // Remove the event if it does not intersect with the FV
-    if (!keepevent)
-	{   G4UImanager *UImanager = G4UImanager::GetUIpointer();
-        UImanager->ApplyCommand("/event/abort");
-    }    
+    //if (!keepevent)
+	//{   G4UImanager *UImanager = G4UImanager::GetUIpointer();
+    //    UImanager->ApplyCommand("/event/abort");
+    //}    
 
 }
 

@@ -6,12 +6,13 @@
 #include <G4Material.hh>
 #include <RunAction.hh>
 #include <Randomize.hh>
-#include <G4KleinNishinaCompton.hh>
+#include <G4KleinNishinaModel.hh>
 #include <G4MaterialCutsCouple.hh>
 #include <G4DynamicParticle.hh>
 #include <G4Track.hh>
 #include <G4ParticleDefinition.hh>
 #include <G4ParticleTable.hh>
+#include <G4DataVector.hh>
 
 //__________________________________________________________________________________________________________
 
@@ -21,17 +22,22 @@ Particle::Particle()
 
 //__________________________________________________________________________________________________________
 
-void Particle::Print()
+void Particle::Print(G4bool extended) //default = false
 {   //G4cout << G4UniformRand() << " " << m_random << G4endl;
-    G4cout << "particle::print PARTICLE STATUS"                             << G4endl
-           << "particle::print type = "               << m_type             << G4endl
-           << "particle::print energy = "             << m_energy << " keV" << G4endl
-           << "particle::print origin = "             << m_x0     << " cm"  << G4endl
-           << "particle::print direction = "          << m_direction        << G4endl
-           << "particle::print deposited energy = "   << m_edep   << " keV" << G4endl
-           << "particle::print variance reduction = " << m_vrt              << G4endl
-           << "particle::print n scatter max = "      << m_nscatter_max     << G4endl
-           << "particle::print e deposit max = "      << m_edep_max         << G4endl;
+    G4cout << "particle::print PARTICLE STATUS"                              << G4endl
+           << "particle::print type               = " << m_type              << G4endl
+           << "particle::print energy             = " << m_energy  << " MeV" << G4endl
+           << "particle::print deposited energy   = " << m_edep    << " MeV" << G4endl
+           << "particle::print origin             = " << m_x0start << " mm"  << G4endl
+           << "particle::print final position     = " << m_x0      << " mm"  << G4endl
+           << "particle::print direction          = " << m_direction         << G4endl
+           << "particle::print weight             = " << m_weight            << G4endl;
+    if (extended)
+    {
+    G4cout << "particle::print variance reduction = " << m_vrt               << G4endl
+           << "particle::print n scatter max      = " << m_nscatter_max      << G4endl
+           << "particle::print e deposit max      = " << m_edep_max          << G4endl;
+    }
 }
 
 //__________________________________________________________________________________________________________
@@ -177,7 +183,12 @@ void Particle::Propagate()
     
     G4bool terminate = false;
     G4double s_max;
-    setNscatter(0); // redundant?
+    m_nscatter = 0; // redundant?
+
+    if (m_debug)
+    {
+        G4cout << "particle::propagate Next event" << G4endl;
+    }
 
     while (!terminate) // While terminate is false
     {   
@@ -198,19 +209,27 @@ void Particle::Propagate()
             if (m_vrt == "fiducial_scatter") // if we require scatters in the FV
             {
                 if (m_nscatter == 0) // if particle didn't scatter yet
-                {    
+                {   
+                    if (m_debug)
+                    {
+                        G4cout << "particle::propagate VRT - transport to fiducial volume is ON" << G4endl;
+                    }
+
                     // intersections with the FV
                     vector<G4double> fiducial_intersections = intersect(FVouterRadius, FVHalfZ);    
-                    
+                    G4cout << "intersect worked" << G4endl;
                     if (fiducial_intersections.size() > 0) // if we intersect with the FV
                     {
                         G4double s_fiducial_entry = fiducial_intersections[0];
+                        G4cout << "We have an entry" << G4endl;
                         G4double s_fiducial_exit  = fiducial_intersections[1];
+                        G4cout << "And an exit" << G4endl;
 
                         // update the weight for forcing to reach the FV
                         m_weight *= Get_att_probability(s_fiducial_entry);
-                        
+                        G4cout << "before transport" << G4endl;
                         Update_particle(s_fiducial_entry,"transport"); //look into this! returns a string, hopefully this is just ignored
+                        G4cout << "after transport" << G4endl;
                         // maximal s will be lower, as we reached the FV, subtract the travelled distance
                         s_max -= s_fiducial_entry;
                         s_max_fiducial = s_fiducial_exit-s_fiducial_entry; // distance of path through FV
@@ -251,12 +270,13 @@ void Particle::Propagate()
             // generate a distance to the next interaction, s_max_fiducial is maximal distance to interaction
             // if we do not require interaction within the FV, s_max_fiducial = -1, and ignored
             G4double s_gen = Generate_interaction_point(s_max_fiducial);
+            G4cout << "Generated interaction point" << G4endl;
 
             if(s_gen < s_max) // interaction within the detector
-            {
+            {   G4cout << "Trying to update particle" << G4endl;
                 // scatter the particle, either PE or compton
                 std::string process = Update_particle(s_gen);
-                    
+                G4cout << "Updated particle" << G4endl;  
                 if (process == "pho") // energy deposit is too high, not interested
                 {
                     terminate = true;
@@ -273,6 +293,11 @@ void Particle::Propagate()
         }
         
 
+    }
+
+    if (m_debug)
+    {
+        G4cout << "particle::propagate exit propagator" << G4endl;
     }
 }
 
@@ -302,10 +327,9 @@ G4double Particle::Generate_interaction_point(G4double smax) //default for smax 
 
 //__________________________________________________________________________________________________________
 
-std::string Particle::Update_particle(G4double s_scatter, std::string process)
+std::string Particle::Update_particle(G4double s_scatter, std::string process)//Default of process = ""
 {   /*
      * Combination of "scatter" and "update_particle" from python code
-     * Default of process = "", as in, no transportation
      * 
      * Will transport a "time" s_scatter and scatter via inc or PE, unless process equals
      * transport, in which case only the transportation takes place
@@ -315,6 +339,8 @@ std::string Particle::Update_particle(G4double s_scatter, std::string process)
     {   process = Select_scatter_process();
     }
 
+    G4cout << "Process is " << process << G4endl;
+
     m_x0 += s_scatter * m_direction; //get to the new position
     G4double edep;
 
@@ -322,6 +348,7 @@ std::string Particle::Update_particle(G4double s_scatter, std::string process)
     {   //Inverse Compton scattering
         edep = Do_compton();
 
+        G4cout << "Trying to save here" << G4endl;
         Save_interaction(m_x0, edep, process); //save interaction data
     }
     else if (process == "pho")
@@ -331,6 +358,7 @@ std::string Particle::Update_particle(G4double s_scatter, std::string process)
         m_edep     += edep;
         m_energy    = 0;
 
+        G4cout << "Trying to save here" << G4endl;
         Save_interaction(m_x0, edep, process); //save interaction data
     }
     else if (process == "transport")
@@ -411,35 +439,50 @@ G4double Particle::Do_compton()
      * Check if dynamic particle is updated???
      */
 
+    G4cout << "So far so good, let's do compton" << G4endl;
     const G4ParticleDefinition* part_def = G4ParticleTable::GetParticleTable()->FindParticle(m_type);
 
     G4DynamicParticle    part_dyn = G4DynamicParticle(part_def,m_direction,m_energy);
     G4DynamicParticle * ppart_dyn = &part_dyn; //pointer to particle
-    
+    G4cout << "made a dynamic particle pointer" << G4endl;
+
     G4double time      = 1; //don't need time but is needed to make a track -> look into this!
     G4double tmin      = 0; //dont need minimal time but is needed for secondaries -> look into this!
     G4double maxEnergy = 10000000; //look into this!, has to do with weight? -> max scatter angle etc
 
     G4Track newtrack = G4Track(ppart_dyn,time,m_x0);
+    G4cout << "Made a track" << G4endl;
 
     G4MaterialCutsCouple    mat_cuts = G4MaterialCutsCouple(m_material);
     G4MaterialCutsCouple * pmat_cuts = &mat_cuts; //pointer to material cuts
+    pmat_cuts->SetIndex(0);//is NOT how to do this, but otherwise it tries to get -1th element of list -> look into this!
+    G4cout << "and material cuts" << G4endl;
 
     std::vector< G4DynamicParticle * >    vec_elec = {};
     std::vector< G4DynamicParticle * > * pvec_elec = &vec_elec;
+    G4cout << "Empty particle vector" << G4endl;
 
-    G4KleinNishinaCompton KNCompt = G4KleinNishinaCompton();
+    G4DataVector cuts = {}; //needed for initialise, idk
 
-    KNCompt.SampleSecondaries (pvec_elec, pmat_cuts, ppart_dyn, tmin, maxEnergy);
+    G4KleinNishinaModel KNmodel = G4KleinNishinaModel();
+    G4cout << "The KN thingie" << G4endl;
+    KNmodel.Initialise(part_def,cuts);
+    G4cout << "Initialised" << G4endl;
+
+    KNmodel.SampleSecondaries(pvec_elec, pmat_cuts, ppart_dyn, tmin, maxEnergy);
+    G4cout << "Tried to sample" << G4endl;
+    
 
     m_direction         = ppart_dyn->GetMomentumDirection();
     G4double new_energy = ppart_dyn->GetKineticEnergy();
+    G4cout << "Got momentum and energy" << G4endl;
 
     G4double edep = (m_energy - new_energy);
     m_edep     += edep;
     m_energy    = new_energy;
     m_nscatter += 1;
 
+    G4cout << "About to set track status" << G4endl;
     newtrack.SetTrackStatus(fStopAndKill); //kill the track as I'm not sure if it otherwise is simulated
 
     return edep;

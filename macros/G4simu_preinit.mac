@@ -2,6 +2,7 @@
 /run/physics/setEMlowEnergyModel emlivermore 
 #/run/physics/setEMlowEnergyModel emstandard
 #/run/physics/setEMlowEnergyModel empenelope
+#/run/physics/setEMlowEnergyModel vemmodel
 /run/physics/setHadronicModel    G4QGSP_BERT_HP 
 /run/physics/setHistograms true 
 /G4simu/analysis/setTreeType compact 
