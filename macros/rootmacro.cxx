@@ -23,14 +23,14 @@ void rootmacro()
 	//Setting the cut
 	TString cut;
 	if (input_cut == 'y')
-	{	TString c_depe   = "etot > 0";
+	{	TString c_edep   = "etot > 0";
 		TString c_nodisc = "abs(zp_pri) < 750";
 	
-		cut  = c_depe + " && " + c_nodisc;
+		cut  = "w_pri * ( " + c_edep + " && " + c_nodisc + " )";
 		cout << "Cut: " << cut << endl;
 	}
 	else
-		cut  = "";
+		cut  = "w_pri";
 	
 	//Radial distance of particle and primary
 	TString rp 		= "sqrt(xp^2 + yp^2)";
@@ -39,14 +39,14 @@ void rootmacro()
 	//Plotting	
 	switch (i)
 	{
-		case 10: evt->Draw("xp_pri:yp_pri:zp_pri");				break;
-		case 11: evt->Draw("xp:yp:zp");				 			break;
-		case 20: evt->Draw("xp_pri:yp_pri",cut); 				break;
-		case 21: evt->Draw("xp:yp",cut); 						break;
-		case 30: evt->Draw(rp_pri,cut); 						break;
-		case 31: evt->Draw(rp,cut);		 						break;
-		case 40: evt->Draw("zp_pri:"+rp_pri,"etot > 0","colz");	break;
-		case 41: evt->Draw("zp:"+rp,"etot > 0","colz");			break;
+		case 10: evt_vrt->Draw("xp_pri:yp_pri:zp_pri");				break;
+		case 11: evt_vrt->Draw("xp:yp:zp");				 			break;
+		case 20: evt_vrt->Draw("xp_pri:yp_pri",cut); 				break;
+		case 21: evt_vrt->Draw("xp:yp",cut); 						break;
+		case 30: evt_vrt->Draw(rp_pri,cut); 						break;
+		case 31: evt_vrt->Draw(rp,cut);		 						break;
+		case 40: evt_vrt->Draw("zp_pri:"+rp_pri,"w_pri * (ed > 0)","colz");	break;
+		case 41: evt_vrt->Draw("zp:"+rp,"w_pri * (ed > 0)","colz");			break;
 	}
 }
 
