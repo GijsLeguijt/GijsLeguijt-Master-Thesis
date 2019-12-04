@@ -312,22 +312,22 @@ void G4KleinNishinaModel::SampleSecondaries(
   G4cout << "Checkpoint 5" << G4endl;
   // sample deexcitation
   //
-  if(fAtomDeexcitation) {G4cout << "Checkpoint 5.1" << G4endl;
+  /*if(fAtomDeexcitation) {G4cout << "Checkpoint 5.1" << G4endl;
     G4int index = couple->GetIndex(); G4cout << "Checkpoint 5.1a, index =" << index << G4endl; 
     if(fAtomDeexcitation->CheckDeexcitationActiveRegion(index)) {G4cout << "Checkpoint 5.1.1" << G4endl; //thisone
-      G4int Z = G4lrint(elm->GetZ());
-      G4AtomicShellEnumerator as = G4AtomicShellEnumerator(i);
-      const G4AtomicShell* shell = fAtomDeexcitation->GetAtomicShell(Z, as);
-      size_t nbefore = fvect->size();
-      fAtomDeexcitation->GenerateParticles(fvect, shell, Z, index);
-      size_t nafter = fvect->size();
+      G4int Z = G4lrint(elm->GetZ());                                         G4cout << "Checkpoint 5.1.1a" << G4endl;
+      G4AtomicShellEnumerator as = G4AtomicShellEnumerator(i);                G4cout << "Checkpoint 5.1.1b" << G4endl;
+      const G4AtomicShell* shell = fAtomDeexcitation->GetAtomicShell(Z, as);  G4cout << "Checkpoint 5.1.1c" << G4endl;
+      size_t nbefore = fvect->size();                                         G4cout << "Checkpoint 5.1.1d" << G4endl;
+      fAtomDeexcitation->GenerateParticles(fvect, shell, Z, index);           G4cout << "Checkpoint 5.1.1e" << G4endl;  //thisone
+      size_t nafter = fvect->size();                                          G4cout << "Checkpoint 5.1.1f" << G4endl;
       if(nafter > nbefore) {G4cout << "Checkpoint 5.1.1.1" << G4endl;
         for (size_t j=nbefore; j<nafter; ++j) {
           edep -= ((*fvect)[j])->GetKineticEnergy();
         } 
       }
     }
-  }
+  }*/
   G4cout << "Checkpoint 6" << G4endl;
   // energy balance
   if(edep < 0.0) { edep = 0.0; }

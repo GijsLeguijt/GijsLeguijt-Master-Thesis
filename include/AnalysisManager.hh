@@ -50,6 +50,7 @@ private:
     
     TFile      *m_pTreeFile;
     TTree      *m_pTree;
+    TTree      *m_pTree_vrt;
     TDirectory *_events;
     
     TParameter<int> *m_pNbEventsToSimulateParameter;

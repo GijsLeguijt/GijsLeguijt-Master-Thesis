@@ -80,6 +80,7 @@ AnalysisManager::BeginOfRun(const G4Run *)
     
     G4cout << "AnalysisManager:: Init data tree ..." << G4endl;
     m_pTree = new TTree("evt", "Event Data");
+    m_pTree_vrt = new TTree("evt_vrt", "Event Data vrt");
     
     gROOT->ProcessLine("#include <vector>");
     
@@ -116,7 +117,20 @@ AnalysisManager::BeginOfRun(const G4Run *)
         m_pTree->Branch("time",       "vector<float>",  &m_pEventData->m_pTime);
     }
     
-    
+    //Data part of vrt MC
+    m_pTree_vrt->Branch("eventid", &m_pEventData->m_iEventId_vrt,  "eventid/I");
+    m_pTree_vrt->Branch("xp_pri",  &m_pEventData->m_fPrimaryX_vrt, "xp_pri/F");
+    m_pTree_vrt->Branch("yp_pri",  &m_pEventData->m_fPrimaryY_vrt, "yp_pri/F");
+    m_pTree_vrt->Branch("zp_pri",  &m_pEventData->m_fPrimaryZ_vrt, "zp_pri/F");
+    m_pTree_vrt->Branch("e_pri",   &m_pEventData->m_fPrimaryE_vrt, "e_pri/F");
+    m_pTree_vrt->Branch("w_pri",   &m_pEventData->m_fPrimaryW_vrt, "w_pri/F");
+    m_pTree_vrt->Branch("xp",     "vector<float>",  &m_pEventData->m_pX_vrt);
+    m_pTree_vrt->Branch("yp",     "vector<float>",  &m_pEventData->m_pY_vrt);
+    m_pTree_vrt->Branch("zp",     "vector<float>",  &m_pEventData->m_pZ_vrt);
+    m_pTree_vrt->Branch("ed",     "vector<float>",  &m_pEventData->m_pEnergyDeposited_vrt);
+    m_pTree_vrt->Branch("edproc", "vector<string>", &m_pEventData->m_pDepositingProcess_vrt);
+
+
     m_pNbEventsToSimulateParameter = new TParameter<int>("nbevents", m_iNbEventsToSimulate);
     m_pNbEventsToSimulateParameter->Write();
 
@@ -157,10 +171,6 @@ AnalysisManager::BeginOfEvent(const G4Event *pEvent)
      * Following code checks whether the initial path of the primary would intersect with the FV if it
      * would not scatter. Only particles that would hit the FV are kept
      */
-
-    // Getting the parameters of the Fiducial Volume (FV)
-    const G4double dFVouterRadius =     DetectorConstruction::GetGeometryParameter("FV_outerR");
-    const G4double dFVHalfZ       = 0.5*DetectorConstruction::GetGeometryParameter("FV_Z");
     
     G4PrimaryVertex*   primaryVertex   = pEvent->GetPrimaryVertex();
     G4PrimaryParticle* primaryParticle = primaryVertex->GetPrimary();
@@ -186,27 +196,32 @@ AnalysisManager::BeginOfEvent(const G4Event *pEvent)
     myParticle.Propagate();
     myParticle.Print();
     
-    /*G4cout << "1mm: "     << myParticle.Get_att_probability(1)     << G4endl
-           << "10mm: "    << myParticle.Get_att_probability(10)    << G4endl
-           << "100mm: "   << myParticle.Get_att_probability(100)   << G4endl
-           << "1000mm: "  << myParticle.Get_att_probability(1000)  << G4endl;*/
-
-
-
-
-    FMC myFMC;
-    // The path length to the shortest intersection is used to calculate the weight
-    vector<G4double> s_side  = myFMC.intersect_side(pos,mom,keepevent,dFVouterRadius,dFVHalfZ);
-    vector<G4double> s_plane = myFMC.intersect_plane(pos,mom,keepevent,dFVouterRadius,dFVHalfZ);       
+    m_pEventData->Clear();
     
-    vector<G4double> s = myFMC.sort_vector(s_side, s_plane);
+    _events->cd();
 
-    // Remove the event if it does not intersect with the FV
-    //if (!keepevent)
-	//{   G4UImanager *UImanager = G4UImanager::GetUIpointer();
-    //    UImanager->ApplyCommand("/event/abort");
-    //}    
+    m_pEventData->m_iEventId_vrt  = pEvent->GetEventID();
+    m_pEventData->m_fPrimaryX_vrt = myParticle.getX0start()[0] / mm;
+    m_pEventData->m_fPrimaryY_vrt = myParticle.getX0start()[1] / mm;
+    m_pEventData->m_fPrimaryZ_vrt = myParticle.getX0start()[2] / mm;
+    m_pEventData->m_fPrimaryE_vrt = (myParticle.getEnergy() + myParticle.getEdep()) / keV;
+    m_pEventData->m_fPrimaryW_vrt = myParticle.getWeight();
+    
+    for (G4int i; i < myParticle.getEdep_int().size(); i++)
+    {   
+        m_pEventData->m_pDepositingProcess_vrt->push_back(myParticle.getPro_int()[i]);
+    
+        m_pEventData->m_pX_vrt->push_back(myParticle.getPos_int()[i][0] / mm);
+        m_pEventData->m_pY_vrt->push_back(myParticle.getPos_int()[i][1] / mm);
+        m_pEventData->m_pZ_vrt->push_back(myParticle.getPos_int()[i][2] / mm);
+                        
+        m_pEventData->m_pEnergyDeposited_vrt->push_back(myParticle.getEdep_int()[i] / keV);
+    }
 
+    m_pTree_vrt->Fill(); // write all events to the tree
+    
+    m_pEventData->Clear();
+    m_pTreeFile->cd();
 }
 
 //__________________________________________________________________________________________________________
