@@ -8929,8 +8929,6 @@ DetectorConstruction.hh
 /user/glegu/testsim/modusim/src/DetectorConstruction.hh
 algorithm
 -
-FMC.hh
-/user/glegu/testsim/modusim/src/FMC.hh
 Particle.hh
 /user/glegu/testsim/modusim/src/Particle.hh
 
@@ -9093,14 +9091,6 @@ EventAction.hh
 /user/glegu/testsim/modusim/src/EventData.cc
 EventData.hh
 /user/glegu/testsim/modusim/src/EventData.hh
-
-/user/glegu/testsim/modusim/src/FMC.cc
-FMC.hh
-/user/glegu/testsim/modusim/src/FMC.hh
-G4UImanager.hh
-/user/glegu/testsim/modusim/src/G4UImanager.hh
-DetectorConstruction.hh
-/user/glegu/testsim/modusim/src/DetectorConstruction.hh
 
 /user/glegu/testsim/modusim/src/G4KleinNishinaModel.cc
 G4KleinNishinaModel.hh
@@ -9460,20 +9450,6 @@ include/EventData.hh
 string
 -
 vector
--
-
-include/FMC.hh
-globals.hh
--
-G4ThreeVector.hh
--
-string
--
-vector
--
-algorithm
--
-numeric
 -
 
 include/Particle.hh

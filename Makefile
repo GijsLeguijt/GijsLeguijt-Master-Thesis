@@ -358,33 +358,6 @@ src/EventData.cc.s:
 	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/EventData.cc.s
 .PHONY : src/EventData.cc.s
 
-src/FMC.o: src/FMC.cc.o
-
-.PHONY : src/FMC.o
-
-# target to build an object file
-src/FMC.cc.o:
-	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/FMC.cc.o
-.PHONY : src/FMC.cc.o
-
-src/FMC.i: src/FMC.cc.i
-
-.PHONY : src/FMC.i
-
-# target to preprocess a source file
-src/FMC.cc.i:
-	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/FMC.cc.i
-.PHONY : src/FMC.cc.i
-
-src/FMC.s: src/FMC.cc.s
-
-.PHONY : src/FMC.s
-
-# target to generate assembly for a file
-src/FMC.cc.s:
-	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/FMC.cc.s
-.PHONY : src/FMC.cc.s
-
 src/G4KleinNishinaModel.o: src/G4KleinNishinaModel.cc.o
 
 .PHONY : src/G4KleinNishinaModel.o
@@ -743,9 +716,6 @@ help:
 	@echo "... src/EventData.o"
 	@echo "... src/EventData.i"
 	@echo "... src/EventData.s"
-	@echo "... src/FMC.o"
-	@echo "... src/FMC.i"
-	@echo "... src/FMC.s"
 	@echo "... src/G4KleinNishinaModel.o"
 	@echo "... src/G4KleinNishinaModel.i"
 	@echo "... src/G4KleinNishinaModel.s"

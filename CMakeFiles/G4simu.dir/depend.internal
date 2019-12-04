@@ -468,7 +468,6 @@ CMakeFiles/G4simu.dir/G4simu.cc.o
  include/AnalysisManager.hh
  include/DetectorConstruction.hh
  include/EventAction.hh
- include/FMC.hh
  include/PhysicsList.hh
  include/PhysicsMessenger.hh
  include/PrimaryGeneratorAction.hh
@@ -957,7 +956,6 @@ CMakeFiles/G4simu.dir/src/AnalysisManager.cc.o
  include/AnalysisMessenger.hh
  include/DetectorConstruction.hh
  include/EventData.hh
- include/FMC.hh
  include/Particle.hh
  include/PrimaryGeneratorAction.hh
  include/stdHit.hh
@@ -1937,106 +1935,6 @@ CMakeFiles/G4simu.dir/src/EventAction.cc.o
 CMakeFiles/G4simu.dir/src/EventData.cc.o
  /user/glegu/testsim/modusim/src/EventData.cc
  include/EventData.hh
-CMakeFiles/G4simu.dir/src/FMC.cc.o
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AffineTransform.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AffineTransform.icc
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ApplicationState.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4BooleanSolid.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4BooleanSolid.icc
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4DisplacedSolid.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ExceptionSeverity.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4RotationMatrix.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4String.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4String.icc
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ThreeVector.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Transform3D.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Types.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UIcommandStatus.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UImanager.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UnionSolid.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VSolid.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VSolid.icc
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VStateDependent.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VUserDetectorConstruction.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ios.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/geomdefs.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/icomsdefs.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/templates.hh
- /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/tls.hh
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/DllImport.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/RConfigure.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/ROOT/RConcurrentHashColl.hxx
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/ROOT/RConfig.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/ROOT/RSpan.hxx
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/ROOT/RStringView.hxx
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/ROOT/RWrap_libcpp_string_view.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/ROOT/TRWSpinLock.hxx
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/ROOT/TSpinMutex.hxx
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/ROOT/TypeTraits.hxx
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/ROOT/libcpp_string_view.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/ROOT/span.hxx
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/RVersion.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/Rtypes.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/RtypesCore.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TBuffer.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TCollection.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TDatime.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TDirectory.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TDirectoryFile.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TFile.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TGenericClassInfo.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/THashTable.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TIsAProxy.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TIterator.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TList.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TMap.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TMathBase.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TNamed.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TObject.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TSchemaHelper.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TSeqCollection.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TStorage.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TString.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TUUID.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TUrl.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TVersionCheck.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TVirtualIsAProxy.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TVirtualMutex.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/TVirtualRWMutex.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/snprintf.h
- /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/strlcpy.h
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Geometry/BasicVector3D.h
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Geometry/Normal3D.h
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Geometry/Point3D.h
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Geometry/Transform3D.h
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Geometry/Transform3D.icc
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Geometry/Vector3D.h
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Geometry/defs.h
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Units/PhysicalConstants.h
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Units/SystemOfUnits.h
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Units/defs.h
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/AxisAngle.h
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/AxisAngle.icc
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/LorentzVector.h
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/LorentzVector.icc
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/Rotation.h
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/Rotation.icc
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationInterfaces.h
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationInterfaces.icc
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationX.h
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationX.icc
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationY.h
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationY.icc
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationZ.h
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationZ.icc
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/ThreeVector.h
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/ThreeVector.icc
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/ZMxpv.h
- /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/defs.h
- /user/glegu/testsim/modusim/src/FMC.cc
- include/DetectorConstruction.hh
- include/FMC.hh
 CMakeFiles/G4simu.dir/src/G4KleinNishinaModel.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Allocator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AllocatorPool.hh

@@ -28,7 +28,6 @@
 #include "G4UImanager.hh"
 #include "DetectorConstruction.hh"
 #include <algorithm>
-#include "FMC.hh"
 #include "Particle.hh"
 
 using namespace CLHEP;
@@ -179,10 +178,7 @@ AnalysisManager::BeginOfEvent(const G4Event *pEvent)
     G4ThreeVector pos = primaryVertex->GetPosition();
     G4ThreeVector mom = primaryParticle->GetMomentumDirection();
     G4double      ene = primaryParticle->GetKineticEnergy();
-
-    // By default, the particle is not tracked, unless it intersects with the FV    
-    G4bool keepevent = false;
-    
+  
     Particle myParticle;
     
     myParticle.setX0(pos);

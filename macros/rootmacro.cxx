@@ -39,12 +39,12 @@ void rootmacro()
 	//Plotting	
 	switch (i)
 	{
-		case 10: evt_vrt->Draw("xp_pri:yp_pri:zp_pri");				break;
-		case 11: evt_vrt->Draw("xp:yp:zp");				 			break;
-		case 20: evt_vrt->Draw("xp_pri:yp_pri",cut); 				break;
-		case 21: evt_vrt->Draw("xp:yp",cut); 						break;
-		case 30: evt_vrt->Draw(rp_pri,cut); 						break;
-		case 31: evt_vrt->Draw(rp,cut);		 						break;
+		case 10: evt_vrt->Draw("xp_pri:yp_pri:zp_pri");						break;
+		case 11: evt_vrt->Draw("xp:yp:zp");				 					break;
+		case 20: evt_vrt->Draw("xp_pri:yp_pri",cut); 						break;
+		case 21: evt_vrt->Draw("xp:yp",cut); 								break;
+		case 30: evt_vrt->Draw(rp_pri,cut); 						        break;
+		case 31: evt_vrt->Draw(rp,cut);		 						        break;
 		case 40: evt_vrt->Draw("zp_pri:"+rp_pri,"w_pri * (ed > 0)","colz");	break;
 		case 41: evt_vrt->Draw("zp:"+rp,"w_pri * (ed > 0)","colz");			break;
 	}
