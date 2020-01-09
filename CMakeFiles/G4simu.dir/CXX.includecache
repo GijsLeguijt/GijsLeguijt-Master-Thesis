@@ -9117,6 +9117,8 @@ G4AtomicShells.hh
 /user/glegu/testsim/modusim/src/G4AtomicShells.hh
 G4LossTableManager.hh
 /user/glegu/testsim/modusim/src/G4LossTableManager.hh
+Particle.hh
+/user/glegu/testsim/modusim/src/Particle.hh
 
 /user/glegu/testsim/modusim/src/Particle.cc
 Particle.hh
@@ -9149,6 +9151,12 @@ G4ParticleTable.hh
 -
 G4DataVector.hh
 -
+G4ParticleChangeForGamma.hh
+/user/glegu/testsim/modusim/src/G4ParticleChangeForGamma.hh
+G4VEmModel.hh
+/user/glegu/testsim/modusim/src/G4VEmModel.hh
+G4ProductionCutsTable.hh
+/user/glegu/testsim/modusim/src/G4ProductionCutsTable.hh
 
 /user/glegu/testsim/modusim/src/PhysicsList.cc
 G4HadronCaptureProcess.hh

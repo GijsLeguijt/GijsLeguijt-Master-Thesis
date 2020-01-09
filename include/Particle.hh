@@ -45,7 +45,6 @@ private:
     G4double                   m_edep_max     = 100000 ;//* MeV;                 //Max allowed energy deposit
     G4int                      m_nscatter     = 0;                               //No. of scatters (NoS) done
     G4int                      m_nscatter_max = 1;                               //Max allowed NoS
-    G4int                      m_random       = 12345;                           //Random seed
     G4ThreeVector              m_x0           = G4ThreeVector(0, 0, 0);          //Particle position
     G4ThreeVector              m_x0start      = G4ThreeVector(0, 0, 0);          //Starting position
     G4ThreeVector              m_direction    = G4ThreeVector(0, 0, 0);          //Particle direction
@@ -68,7 +67,6 @@ public:
     void setEdep_max(G4double edep_max)                 {m_edep_max     = edep_max;}
     void setNscatter(G4int nscatter)                    {m_nscatter     = nscatter;}
     void setNscatter_max(G4int nscatter_max)            {m_nscatter_max = nscatter_max;}
-    void setRandom(G4int random)                        {m_random       = random;}// G4Random::setTheSeed(m_random);} <- removes randomness in entire simulation :(
     void setX0(G4ThreeVector x0)                        {m_x0           = x0;}
     void setX0start(G4ThreeVector x0start)              {m_x0start      = x0start;}
     void setDirection(G4ThreeVector direction)          {m_direction    = direction;}
@@ -88,7 +86,6 @@ public:
     G4double                   getEdep_max()     { return m_edep_max; }    
     G4int                      getNscatter()     { return m_nscatter; }
     G4int                      getNscatter_max() { return m_nscatter_max; }
-    G4int                      getRandom()       { return m_random; }
     G4ThreeVector              getX0()           { return m_x0; }
     G4ThreeVector              getX0start()      { return m_x0start; }
     G4ThreeVector              getdirection()    { return m_direction; }

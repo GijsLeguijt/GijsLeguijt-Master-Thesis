@@ -186,11 +186,8 @@ AnalysisManager::BeginOfEvent(const G4Event *pEvent)
     myParticle.setEnergy(ene);
     myParticle.setX0start(pos);
     myParticle.setVrt("fiducial_scatter");
-    myParticle.setRandom(12345); //should be changed still, but not priority
-    myParticle.setDebug(true);
-
+    
     myParticle.Propagate();
-    myParticle.Print();
     
     m_pEventData->Clear();
     
@@ -241,7 +238,7 @@ AnalysisManager::EndOfEvent(const G4Event *pEvent)
     m_pEventData->m_fPrimaryE = m_pPrimaryGeneratorAction->GetEnergyOfPrimary() / keV;
     m_pEventData->m_fPrimaryW = pEvent->GetPrimaryVertex()->GetWeight();
     
-    G4cout  << "Primary particle ID: " << m_pEventData->m_iEventId << G4endl;
+    //G4cout  << "Primary particle ID: " << m_pEventData->m_iEventId << G4endl;
     
     // unpack the hit collections
     G4int    iNbHits               = 0;
@@ -264,7 +261,7 @@ AnalysisManager::EndOfEvent(const G4Event *pEvent)
                 
                 // the number of hits
                 iNbHits = (pHitsCollection)?(pHitsCollection->entries()):(0);
-                G4cout << icol << " Nb hits = " << iNbHits<< " ID = " << m_CollectionIDs[icol] << " (AnalysisManager)" << G4endl;
+                //G4cout << icol << " Nb hits = " << iNbHits<< " ID = " << m_CollectionIDs[icol] << " (AnalysisManager)" << G4endl;
                 
                 if(iNbHits) {
                     // hits

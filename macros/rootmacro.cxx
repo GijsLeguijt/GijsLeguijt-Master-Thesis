@@ -10,7 +10,9 @@ void rootmacro()
 			<< "30: r of primaries"	 		<< endl
 			<< "31: r of hits"		 		<< endl
 			<< "40: (r,z) of primaries"		<< endl
-			<< "41: (r,z) of hits"			<< endl;
+			<< "41: (r,z) of hits"			<< endl
+			<< "42: (r2,z) of hits"			<< endl
+			<< "50: energy spectrum"		<< endl;
 	cin		>> i;
 	cout	<< endl;
 
@@ -23,7 +25,7 @@ void rootmacro()
 	//Setting the cut
 	TString cut;
 	if (input_cut == 'y')
-	{	TString c_edep   = "etot > 0";
+	{	TString c_edep   = "ed > 0";
 		TString c_nodisc = "abs(zp_pri) < 750";
 	
 		cut  = "w_pri * ( " + c_edep + " && " + c_nodisc + " )";
@@ -34,6 +36,7 @@ void rootmacro()
 	
 	//Radial distance of particle and primary
 	TString rp 		= "sqrt(xp^2 + yp^2)";
+	TString rp2     = "xp^2 + yp^2";
 	TString rp_pri 	= "sqrt(xp_pri^2 + yp_pri^2)";
 	
 	//Plotting	
@@ -47,6 +50,8 @@ void rootmacro()
 		case 31: evt_vrt->Draw(rp,cut);		 						        break;
 		case 40: evt_vrt->Draw("zp_pri:"+rp_pri,"w_pri * (ed > 0)","colz");	break;
 		case 41: evt_vrt->Draw("zp:"+rp,"w_pri * (ed > 0)","colz");			break;
+		case 42: evt_vrt->Draw("zp:"+rp2,"w_pri * (ed > 0)","colz");		break;
+		case 50: evt_vrt->Draw("ed",cut,"hist");							break;
 	}
 }
 

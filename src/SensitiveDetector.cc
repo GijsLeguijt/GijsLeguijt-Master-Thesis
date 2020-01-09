@@ -34,7 +34,7 @@ void SensitiveDetector::Initialize(G4HCofThisEvent* pHitsCollectionOfThisEvent)
 	if(iHitsCollectionID < 0)
 		iHitsCollectionID = G4SDManager::GetSDMpointer()->GetCollectionID(m_pHitsCollection);
 
-    	G4cout << "SensitiveDetector::Initialize ID = " << iHitsCollectionID << " (SensitiveDetector)" << G4endl;
+    	//G4cout << "SensitiveDetector::Initialize ID = " << iHitsCollectionID << " (SensitiveDetector)" << G4endl;
 	
 	pHitsCollectionOfThisEvent->AddHitsCollection(iHitsCollectionID, m_pHitsCollection);
 
