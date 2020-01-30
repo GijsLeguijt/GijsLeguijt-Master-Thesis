@@ -18,21 +18,22 @@ class Particle
 {
 public:
     Particle();
-    void Print(G4bool extended = false);
+    void                  Print(G4bool extended = false);
+    void                  Propagate();
+    void                  Save_interaction(G4ThreeVector position, G4double deposit, std::string process);
+    G4double              Get_att_probability(G4double distance);
+    G4double              Do_compton();
+    G4double              Generate_interaction_point(G4double smax = -1);
+    std::string           Update_particle(G4double s_scatter, std::string process = "");
+    std::string           Select_scatter_process();
     std::vector<G4double> intersect(G4double cyl_outerRadius, G4double cyl_halfZ);
-    G4double Get_att_probability(G4double distance);
-    void Propagate();
-    G4double Generate_interaction_point(G4double smax = -1);
-    std::string Update_particle(G4double s_scatter, std::string process = "");
-    std::string Select_scatter_process();
-    G4double Do_compton();
-    void Save_interaction(G4ThreeVector position, G4double deposit, std::string process);
+
 private:
-    std::vector<G4double> intersect_side(G4ThreeVector x0, G4ThreeVector p, G4double r_cyl, G4double z_cyl);
+    std::vector<G4double> intersect_side( G4ThreeVector x0, G4ThreeVector p, G4double r_cyl, G4double z_cyl);
     std::vector<G4double> intersect_plane(G4ThreeVector x0, G4ThreeVector p, G4double r_cyl, G4double z_cyl);
     std::vector<G4double> sort_vector(std::vector<G4double> s1, std::vector<G4double> s2);
-    G4double Random_uniform(G4double min, G4double max);
-    G4EmCalculator emCalc;
+    G4double              Random_uniform(G4double min, G4double max);
+    G4EmCalculator        emCalc;
     
 private:
     //Parameters
@@ -42,7 +43,8 @@ private:
     G4double                   m_weight       = 1;                               //Particle weight
     G4double                   m_energy       = 0;                               //Particle energy
     G4double                   m_edep         = 0;                               //Deposited energy
-    G4double                   m_edep_max     = 100000 ;//* MeV;                 //Max allowed energy deposit
+    G4double                   m_edep_max     = 100000 * MeV;                    //Max allowed energy deposit
+    G4double                   m_prod_cut     = 1      * keV;                    //Energy production cut for Compton
     G4int                      m_nscatter     = 0;                               //No. of scatters (NoS) done
     G4int                      m_nscatter_max = 1;                               //Max allowed NoS
     G4ThreeVector              m_x0           = G4ThreeVector(0, 0, 0);          //Particle position
@@ -65,6 +67,7 @@ public:
     void setEnergy(G4double energy)                     {m_energy       = energy;}
     void setEdep(G4double edep)                         {m_edep         = edep;}
     void setEdep_max(G4double edep_max)                 {m_edep_max     = edep_max;}
+    void setProd_cut(G4double prod_cut)                 {m_prod_cut     = prod_cut;}
     void setNscatter(G4int nscatter)                    {m_nscatter     = nscatter;}
     void setNscatter_max(G4int nscatter_max)            {m_nscatter_max = nscatter_max;}
     void setX0(G4ThreeVector x0)                        {m_x0           = x0;}
@@ -83,7 +86,8 @@ public:
     G4double                   getWeight()       { return m_weight; }
     G4double                   getEnergy()       { return m_energy; }
     G4double                   getEdep()         { return m_edep; }
-    G4double                   getEdep_max()     { return m_edep_max; }    
+    G4double                   getEdep_max()     { return m_edep_max; }
+    G4double                   getProd_cut()     { return m_prod_cut; }     
     G4int                      getNscatter()     { return m_nscatter; }
     G4int                      getNscatter_max() { return m_nscatter_max; }
     G4ThreeVector              getX0()           { return m_x0; }

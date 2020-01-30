@@ -29,6 +29,7 @@
 #include "DetectorConstruction.hh"
 #include <algorithm>
 #include "Particle.hh"
+#include <cmath>
 
 using namespace CLHEP;
 
@@ -170,9 +171,9 @@ AnalysisManager::BeginOfEvent(const G4Event *pEvent)
      * Following code checks whether the initial path of the primary would intersect with the FV if it
      * would not scatter. Only particles that would hit the FV are kept
      */
-    
-    G4PrimaryVertex*   primaryVertex   = pEvent->GetPrimaryVertex();
-    G4PrimaryParticle* primaryParticle = primaryVertex->GetPrimary();
+    /*
+    G4PrimaryVertex   * primaryVertex   = pEvent->GetPrimaryVertex();
+    G4PrimaryParticle * primaryParticle = primaryVertex->GetPrimary();
 
     // Getting position and momentum of the initial particle
     G4ThreeVector pos = primaryVertex->GetPosition();
@@ -180,7 +181,7 @@ AnalysisManager::BeginOfEvent(const G4Event *pEvent)
     G4double      ene = primaryParticle->GetKineticEnergy();
   
     Particle myParticle;
-    
+
     myParticle.setX0(pos);
     myParticle.setDirection(mom);
     myParticle.setEnergy(ene);
@@ -215,6 +216,7 @@ AnalysisManager::BeginOfEvent(const G4Event *pEvent)
     
     m_pEventData->Clear();
     m_pTreeFile->cd();
+    */
 }
 
 //__________________________________________________________________________________________________________
@@ -261,6 +263,7 @@ AnalysisManager::EndOfEvent(const G4Event *pEvent)
                 
                 // the number of hits
                 iNbHits = (pHitsCollection)?(pHitsCollection->entries()):(0);
+                
                 //G4cout << icol << " Nb hits = " << iNbHits<< " ID = " << m_CollectionIDs[icol] << " (AnalysisManager)" << G4endl;
                 
                 if(iNbHits) {
@@ -296,37 +299,70 @@ AnalysisManager::EndOfEvent(const G4Event *pEvent)
                         //
                         // calculate the average position of a hit in each detector
                         //
-                        G4double xx=0;
-                        G4double yy=0;
-                        G4double zz=0;
-                        G4double ee=0;
-                        G4double tt=0;
-                        
+                                                
                         for(G4int i = 0; i < iNbHits; i++) {
-                            stdHit *pHit = (*pHitsCollection)[i];
-                            G4double ed  = pHit->GetEnergyDeposited()/keV;
-                            
-                            xx += pHit->GetPosition().x()/mm * ed;
-                            yy += pHit->GetPosition().y()/mm * ed;
-                            zz += pHit->GetPosition().z()/mm * ed;
-                            tt += pHit->GetTime()/second     * ed;
-                            ee += ed;
-                        }
-                        if(ee!=0){
-                            xx /= ee;
-                            yy /= ee;
-                            zz /= ee;
-                            tt /= ee;
-                        }
-                        // fill the tree variables
-                        m_pEventData->m_pCollectionId->push_back(icol);
-                        m_pEventData->m_pEnergyDeposited->push_back(ee);
-                        m_pEventData->m_pX->push_back(xx);
-                        m_pEventData->m_pY->push_back(yy);
-                        m_pEventData->m_pZ->push_back(zz);
-                        m_pEventData->m_pTime->push_back(tt);
 
-                        fTotalEnergyDeposited += ee;
+                            G4double xx = 0;
+                            G4double yy = 0;
+                            G4double zz = 0;
+                            G4double ee = 0;
+                            G4double tt = 0;
+
+                            stdHit *pHit = (*pHitsCollection)[i];
+                            if (pHit->GetTrackBanner()){
+                                continue;
+                            }
+                            
+                            G4double x1 = pHit->GetPosition().x();
+                            G4double y1 = pHit->GetPosition().y();
+                            G4double z1 = pHit->GetPosition().z();
+                            G4double t1 = pHit->GetTime();
+
+                            for(G4int j = 0; j < iNbHits; j++) { 
+
+                                stdHit *pHit2 = (*pHitsCollection)[j];
+                                if (pHit2->GetTrackBanner()){
+                                    continue;
+                                }
+                                
+                                G4double ed2 = pHit2->GetEnergyDeposited()/keV;
+
+                                G4double x2 = pHit2->GetPosition().x();
+                                G4double y2 = pHit2->GetPosition().y();
+                                G4double z2 = pHit2->GetPosition().z();
+                                G4double t2 = pHit2->GetTime();
+
+                                G4double distance = sqrt( pow((x2-x1),2) + pow((y2-y1),2) + pow((z2-z1),2) );
+                                G4double time_dif = abs ( t2 - t1 );
+
+                                if (distance <= 0 * mm && time_dif <= 0 * ns){//doesnt cluster now, cause doing so in root file
+                                    pHit2->SetTrackBanner(true);
+                                    xx += x2/mm * ed2;
+                                    yy += y2/mm * ed2;
+                                    zz += z2/mm * ed2;
+                                    tt += t2/second     * ed2;
+                                    ee += ed2;
+                                }
+
+                            }
+
+                            if(ee!=0){
+                                xx /= ee;
+                                yy /= ee;
+                                zz /= ee;
+                                tt /= ee;
+                            }
+                        
+                            // fill the tree variables
+                            m_pEventData->m_pCollectionId->push_back(icol);
+                            m_pEventData->m_pEnergyDeposited->push_back(ee);
+                            m_pEventData->m_pX->push_back(xx);
+                            m_pEventData->m_pY->push_back(yy);
+                            m_pEventData->m_pZ->push_back(zz);
+                            m_pEventData->m_pTime->push_back(tt);
+
+                            fTotalEnergyDeposited += ee;
+                        }                       
                                                 
                     } else {
                         G4cout << "AnalysisManager::EndOfEvent ERROR: wrong Tree type selected" << G4endl;

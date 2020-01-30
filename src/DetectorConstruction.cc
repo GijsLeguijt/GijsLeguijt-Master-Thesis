@@ -155,12 +155,12 @@ DetectorConstruction::DefineMaterials()
     ele_Xe136->AddIsotope(iso_Xe136, 100.*perCent);
 
     //-------------------------------------- stainless steel --------------------------------------
-    G4Material *SS304LSteel = new G4Material("SS304LSteel", 8.00*g/cm3, 5, kStateSolid);
+    /*G4Material *SS304LSteel = new G4Material("SS304LSteel", 8.00*g/cm3, 5, kStateSolid);
     SS304LSteel->AddElement(Fe, 0.65);
     SS304LSteel->AddElement(Cr, 0.20);
     SS304LSteel->AddElement(Ni, 0.12);
     SS304LSteel->AddElement(Mn, 0.02);
-    SS304LSteel->AddElement(Si, 0.01);
+    SS304LSteel->AddElement(Si, 0.01);*/
 
     //------------------------------------------ teflon -------------------------------------------
     // G4Material* Teflon = new G4Material("Teflon", 2.2*g/cm3, 2, kStateSolid);
@@ -226,6 +226,7 @@ DetectorConstruction::ConstructSD()
     G4VSensitiveDetector* LXe_SD = new SensitiveDetector(SDname="/LXe");
     SDman->AddNewDetector(LXe_SD);
     m_pLXe_LogicalVolume->SetSensitiveDetector(LXe_SD);
+    m_pTPC_LogicalVolume->SetSensitiveDetector(LXe_SD);
 
 }
 
@@ -237,7 +238,7 @@ DetectorConstruction::ConstructCollimatorSystem()
     
     //========================================= Materials =========================================
     G4Material *LXe    = G4Material::GetMaterial("LXe");
-    G4Material *SSteel = G4Material::GetMaterial("SS304LSteel");
+    //G4Material *SSteel = G4Material::GetMaterial("SS304LSteel");
 
     // rotation matrix for the TPC
     G4RotationMatrix *pRot      = new G4RotationMatrix();
@@ -254,7 +255,8 @@ DetectorConstruction::ConstructCollimatorSystem()
 												dTPCouterRadius,
 												dTPCHalfZ,
 												0.*deg, 360.*deg);
-    m_pTPC_LogicalVolume	= new G4LogicalVolume(pTPC, SSteel, "TPCTUBS", 0, 0, 0);
+    //m_pTPC_LogicalVolume	= new G4LogicalVolume(pTPC, SSteel, "TPCTUBS", 0, 0, 0);
+    m_pTPC_LogicalVolume	= new G4LogicalVolume(pTPC, LXe, "TPCTUBS", 0, 0, 0);
     m_pTPC_PhysicalVolume 	= new G4PVPlacement(pRot, G4ThreeVector(0,0,0),
                                                         m_pTPC_LogicalVolume,
                                                         "TPC",

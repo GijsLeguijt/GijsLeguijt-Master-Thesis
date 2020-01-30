@@ -429,53 +429,59 @@ G4double Particle::Random_uniform(G4double min, G4double max)
 
 G4double Particle::Do_compton()
 {   /*
-     * look into this!
-     * 
-     * Does compton scattering using G4KleinNishinaModel
+     * Does compton scattering using G4KleinNishinaModel, returns deposited energy
      * 
      * Initial part is declaration of (irrelevant) objects needed for G4KleinNishinaModel to work
+     * 
+     * CAREFUL:
+     * the function overwrites the ProductionCutsTable, but this should not cause issues
      */
 
+    
+    //-----------------------------------------Irrelevant variables-----------------------------------------
+    //G4KleinNishinaModel's SampleSecondaries requires following 2 variables but doesn't use them
+    G4double tmin      = 0;    
+    G4double maxEnergy = 0;
+    
+    //G4KleinNishinaModel's Initialise requires following cut, which eventually ends up in
+    //ComputeCrossSectionPerAtom, which doesn't use it
+    size_t           x = 1; //can't be zero
+    G4DataVector  cuts = {x, 0};
+    //------------------------------------------------------------------------------------------------------
+    
+    
     const G4ParticleDefinition* part_def = G4ParticleTable::GetParticleTable()->FindParticle(m_type);
 
     //
-    //Make the photon that will scatter + a storage for the scattered electron
+    //Make the photon that will scatter and a storage for the scattered electron
     //
-
     G4DynamicParticle * ppart_dyn = new G4DynamicParticle(part_def,m_direction,m_energy);
     std::vector< G4DynamicParticle * >    vec_elec = {};
     std::vector< G4DynamicParticle * > * pvec_elec = &vec_elec;
     
     //
-    //G4KleinNishinaModel's SampleSecondaries requires following 2 variables but doesn't use them
+    //sets the production energy cuts for the electrons.
+    //CAREFUL: this overwrites the productioncuts table, however, the table should not be used anymore anyway
     //
-    G4double tmin      = 0;    
-    G4double maxEnergy = 0; 
+    G4ProductionCutsTable * pprod_cuttable = G4ProductionCutsTable::GetProductionCutsTable();
+    const G4MaterialCutsCouple * pmat_cuts = pprod_cuttable->GetMaterialCutsCouple(0); //selecting a couple to overwrite
+    G4ProductionCuts          * pprod_cuts = pmat_cuts->GetProductionCuts();
+    pprod_cuts->SetProductionCut(m_prod_cut);                                                    //overwriting the table
     
-
-    //G4MaterialCutsCouple    mat_cuts = G4MaterialCutsCouple(m_material);
-    //G4MaterialCutsCouple * pmat_cuts = &mat_cuts; //pointer to material cuts
-    //pmat_cuts->SetIndex(0);//is NOT how to do this, but otherwise it tries to get -1th element of list -> look into this!
-    const G4MaterialCutsCouple * pmat_cuts = G4ProductionCutsTable::GetProductionCutsTable()->GetMaterialCutsCouple(0); //wrong material cut -> look into this!
-    
-    size_t x = 1; //think this is: number of cuts, can't be zero as compiler will crash, trying to find something that's not there -> look into this!
-    G4DataVector cuts = {x, 0}; //thought it was: number of cuts, energy cuts, but 2nd number doesnt change anything -> look into this!
-
-
-    G4ParticleChangeForGamma    Gammainfo;                          //storage for new direction and energy
+    G4ParticleChangeForGamma    Gammainfo;                                        //storage for new direction and energy
     G4ParticleChangeForGamma * pGammainfo = &Gammainfo;
     
     //
     // Actual KN model, initialisation and afterwards compton scattering
     //
     G4KleinNishinaModel KNmodel = G4KleinNishinaModel();
-    KNmodel.SetParticleChange(pGammainfo);                          //make sure it uses correct storage
-    KNmodel.Initialise(part_def,cuts);
+    KNmodel.SetParticleChange(pGammainfo);                                          //makes sure it uses correct storage
+    KNmodel.Initialise(part_def, cuts);
     
     //do the scattering
     KNmodel.SampleSecondaries(pvec_elec, pmat_cuts, ppart_dyn, tmin, maxEnergy);
 
-    //Hook to the scattered electron, in case it's needed
+    //hook to the scattered electron, in case it's needed
     //G4DynamicParticle * electron = pvec_elec->at(0);    
 
     //saving data to the particle    
@@ -483,10 +489,10 @@ G4double Particle::Do_compton()
     G4double new_energy = Gammainfo.GetProposedKineticEnergy();
 
     G4double edep = (m_energy - new_energy);
-    m_edep     += edep;
-    m_energy    = new_energy;          
-    m_nscatter += 1;
-
+    m_edep       += edep;
+    m_energy      = new_energy;          
+    m_nscatter   += 1;
+    
     return edep;
 }
 
@@ -509,7 +515,10 @@ Zoeken op "look into this!"
 
 
 Zoeken op: "LXe" en zorgen dat dit correcte materiaal is (ook in .hh)
-Zorgen bij aanroepen functie dat elk deeltje nieuw seed krijgt + 1e zelfde als run messenger
 Zoeken op "std::string Particle::Select_scatter_process()", compton vs inverse?
 Zoeken op "redundant"
+
+
+
+Neutrons: geant4 user guide for application devellopers: 5.2.2.3
 */

@@ -28,9 +28,9 @@
 
 
 
-#/gps/particle gamma
-/gps/particle geantino
-/gps/energy 1. MeV
+/gps/particle gamma
+#/gps/particle geantino
+/gps/energy 1 MeV
 # 60Co
 #/gps/ion 27 60
 # 44Ti

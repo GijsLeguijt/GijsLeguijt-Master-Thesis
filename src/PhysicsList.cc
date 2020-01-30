@@ -413,13 +413,13 @@ PhysicsList::MakePhysicsPlots()
             
             // book histograms
             char  hName[100];
-            sprintf(hName,"_el_%s_neutron_elastic",ele->GetName().c_str());
+            sprintf(hName, "_el_%s_neutron_elastic",  ele->GetName().c_str());
             _el_neutron_elastic.push_back(new TH1F(hName,hName,nstep,emin-de/2,emax-de/2));
-            sprintf(hName,"_el_%s_neutron_inelastic",ele->GetName().c_str());
+            sprintf(hName, "_el_%s_neutron_inelastic",ele->GetName().c_str());
             _el_neutron_inelastic.push_back(new TH1F(hName,hName,nstep,emin-de/2,emax-de/2));
-            sprintf(hName,"_el_%s_neutron_capture",ele->GetName().c_str());
+            sprintf(hName, "_el_%s_neutron_capture",  ele->GetName().c_str());
             _el_neutron_capture.push_back(new TH1F(hName,hName,nstep,emin-de/2,emax-de/2));
-            sprintf(hName,"_el_%s_neutron_fission",ele->GetName().c_str());
+            sprintf(hName, "_el_%s_neutron_fission",  ele->GetName().c_str());
             _el_neutron_fission.push_back(new TH1F(hName,hName,nstep,emin-de/2,emax-de/2));
             
             G4Material *mdummy = G4NistManager::Instance()->GetMaterial(1);
@@ -428,10 +428,10 @@ PhysicsList::MakePhysicsPlots()
                 G4double e = std::pow(10.,x);
                 
                 // G4.9.5
-                G4double xs_elastic   = hadstore->GetElasticCrossSectionPerAtom(particle,e,ele,mdummy)/barn;
+                G4double xs_elastic   = hadstore->GetElasticCrossSectionPerAtom(  particle,e,ele,mdummy)/barn;
                 G4double xs_inelastic = hadstore->GetInelasticCrossSectionPerAtom(particle,e,ele,mdummy)/barn;
-                G4double xs_capture   = hadstore->GetCaptureCrossSectionPerAtom(particle,e,ele,mdummy)/barn;
-                G4double xs_fission   = hadstore->GetFissionCrossSectionPerAtom(particle,e,ele,mdummy)/barn;
+                G4double xs_capture   = hadstore->GetCaptureCrossSectionPerAtom(  particle,e,ele,mdummy)/barn;
+                G4double xs_fission   = hadstore->GetFissionCrossSectionPerAtom(  particle,e,ele,mdummy)/barn;
                 
                 // G4.9.4.p02
                 //G4double xs_elastic   = hadstore->GetElasticCrossSectionPerAtom(particle,e,ele)/barn;

@@ -5,4 +5,4 @@
 #/run/physics/setEMlowEnergyModel vemmodel
 /run/physics/setHadronicModel    G4QGSP_BERT_HP 
 /run/physics/setHistograms true 
-/G4simu/analysis/setTreeType compact 
+/G4simu/analysis/setTreeType raw #compact 

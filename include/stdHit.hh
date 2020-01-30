@@ -32,6 +32,8 @@ public:
 	void SetEnergyDeposited(G4double dEnergyDeposited) { m_dEnergyDeposited = dEnergyDeposited; };
 	void SetKineticEnergy(G4double dKineticEnergy) { m_dKineticEnergy = dKineticEnergy; };
 	void SetTime(G4double dTime) { m_dTime = dTime; };
+	
+	void SetTrackBanner(G4bool trackbanner) {m_trackbanner = trackbanner; };
 
 	G4int GetTrackId() { return m_iTrackId; };
 	G4int GetParentId() { return m_iParentId; };
@@ -42,7 +44,9 @@ public:
 	G4ThreeVector GetPosition() { return m_hPosition; };
 	G4double GetEnergyDeposited() { return m_dEnergyDeposited; };      
 	G4double GetKineticEnergy() { return m_dKineticEnergy; };      
-	G4double GetTime() { return m_dTime; };      
+	G4double GetTime() { return m_dTime; };
+
+	G4bool GetTrackBanner() { return m_trackbanner; } ;
 
 private:
 	G4int m_iTrackId;
@@ -55,6 +59,8 @@ private:
 	G4double m_dEnergyDeposited;
 	G4double m_dKineticEnergy;
 	G4double m_dTime;
+
+	G4bool m_trackbanner = false;
 };
 
 typedef G4THitsCollection<stdHit> stdHitsCollection;
