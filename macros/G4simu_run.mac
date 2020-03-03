@@ -3,7 +3,7 @@
 /event/verbose    0
 /tracking/verbose 0
 
-/run/random/setRandomSeed 12346
+/run/random/setRandomSeed 12365
 
 #either use this block (all over TPC, or next one, 1 static point)
 /gps/position 0. 0. 0. cm
@@ -28,8 +28,8 @@
 
 
 
-/gps/particle gamma
-#/gps/particle geantino
+#/gps/particle gamma
+/gps/particle geantino
 /gps/energy 1 MeV
 # 60Co
 #/gps/ion 27 60

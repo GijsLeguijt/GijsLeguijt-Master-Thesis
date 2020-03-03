@@ -30,6 +30,10 @@
 #include <algorithm>
 #include "Particle.hh"
 #include <cmath>
+#include <G4LowEPComptonModel.hh>
+#include <G4ParticleDefinition.hh>
+#include <G4ParticleTable.hh>
+#include <G4DataVector.hh>
 
 using namespace CLHEP;
 
@@ -135,6 +139,11 @@ AnalysisManager::BeginOfRun(const G4Run *)
     m_pNbEventsToSimulateParameter->Write();
 
     m_pTreeFile->cd();
+
+    /*size_t           x = 1; //can't be zero
+    G4DataVector  cuts = {x, 0};
+    const G4ParticleDefinition* part_def = G4ParticleTable::GetParticleTable()->FindParticle("gamma");
+    comp_model.Initialise(part_def, cuts);*/
 }
 
 //__________________________________________________________________________________________________________
@@ -171,7 +180,7 @@ AnalysisManager::BeginOfEvent(const G4Event *pEvent)
      * Following code checks whether the initial path of the primary would intersect with the FV if it
      * would not scatter. Only particles that would hit the FV are kept
      */
-    /*
+    
     G4PrimaryVertex   * primaryVertex   = pEvent->GetPrimaryVertex();
     G4PrimaryParticle * primaryParticle = primaryVertex->GetPrimary();
 
@@ -181,7 +190,8 @@ AnalysisManager::BeginOfEvent(const G4Event *pEvent)
     G4double      ene = primaryParticle->GetKineticEnergy();
   
     Particle myParticle;
-
+    
+    myParticle.setLEPmodel(pcomp_model);
     myParticle.setX0(pos);
     myParticle.setDirection(mom);
     myParticle.setEnergy(ene);
@@ -216,7 +226,7 @@ AnalysisManager::BeginOfEvent(const G4Event *pEvent)
     
     m_pEventData->Clear();
     m_pTreeFile->cd();
-    */
+    
 }
 
 //__________________________________________________________________________________________________________
@@ -337,10 +347,10 @@ AnalysisManager::EndOfEvent(const G4Event *pEvent)
 
                                 if (distance <= 0 * mm && time_dif <= 0 * ns){//doesnt cluster now, cause doing so in root file
                                     pHit2->SetTrackBanner(true);
-                                    xx += x2/mm * ed2;
-                                    yy += y2/mm * ed2;
-                                    zz += z2/mm * ed2;
-                                    tt += t2/second     * ed2;
+                                    xx += x2 / mm     * ed2;
+                                    yy += y2 / mm     * ed2;
+                                    zz += z2 / mm     * ed2;
+                                    tt += t2 / second * ed2;
                                     ee += ed2;
                                 }
 

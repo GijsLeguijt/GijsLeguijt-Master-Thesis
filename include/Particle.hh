@@ -11,8 +11,9 @@
 #include <G4NistManager.hh>
 #include <G4EmCalculator.hh>
 #include <Randomize.hh>
+#include <G4LowEPComptonModel.hh>
 
-using namespace CLHEP;
+using namespace CLHEP; //apparantly bad to do this, cause if gets inherited by everything that includes, might want to change
 
 class Particle
 {
@@ -55,6 +56,8 @@ private:
     std::vector<G4double>      m_edep_int     = {};                              //Interaction deposits
     std::vector<G4ThreeVector> m_pos_int      = {};                              //Interaction points
     std::vector<std::string>   m_pro_int      = {};                              //Interaction processes
+
+    G4LowEPComptonModel  *      m_LEPmodel     = 0;
     
 
   
@@ -78,6 +81,8 @@ public:
     void setEdep_int(std::vector<G4double> edep_int)    {m_edep_int     = edep_int;}
     void setPos_int(std::vector<G4ThreeVector> pos_int) {m_pos_int      = pos_int;}
     void setPro_int(std::vector<std::string> pro_int)   {m_pro_int      = pro_int;}
+
+    void setLEPmodel(G4LowEPComptonModel * LEPmodel)      {m_LEPmodel     = LEPmodel;}
     
     //Gets
     std::string                getType()         { return m_type; }
@@ -97,7 +102,9 @@ public:
     std::vector<G4double>      getSint()         { return m_sint; }
     std::vector<G4double>      getEdep_int()     { return m_edep_int; }
     std::vector<G4ThreeVector> getPos_int()      { return m_pos_int; }
-    std::vector<std::string>   getPro_int()      { return m_pro_int; }   
+    std::vector<std::string>   getPro_int()      { return m_pro_int; }
+
+    G4LowEPComptonModel *       getLEPmodel()     { return m_LEPmodel; } 
     
 };
 

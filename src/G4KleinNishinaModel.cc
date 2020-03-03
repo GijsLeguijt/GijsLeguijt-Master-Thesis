@@ -223,7 +223,8 @@ void G4KleinNishinaModel::SampleSecondaries(
 
     G4double epsilon, epsilonsq, onecost, sint2, greject ;
 
-    G4double eps0       = 1./(1 + 2*E0_m);
+    G4double eps0       = std::max(1./(1 + 2*E0_m),(energy-100*keV)/energy);
+    //G4double eps0       = 1./(1 + 2*E0_m);
     G4double epsilon0sq = eps0*eps0;
     G4double alpha1     = - log(eps0);
     G4double alpha2     = 0.5*(1 - epsilon0sq);
@@ -239,7 +240,7 @@ void G4KleinNishinaModel::SampleSecondaries(
       }
 
       onecost = (1.- epsilon)/(epsilon*E0_m);
-      sint2   = onecost*(2.-onecost);
+      sint2   = onecost*(2.-onecost);//(1-cos)(1+cos) = 1 - cos2
       greject = 1. - epsilon*sint2/(1.+ epsilonsq);
 
     } while (greject < G4UniformRand());

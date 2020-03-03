@@ -385,6 +385,33 @@ src/G4KleinNishinaModel.cc.s:
 	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/G4KleinNishinaModel.cc.s
 .PHONY : src/G4KleinNishinaModel.cc.s
 
+src/G4LowEPComptonModel.o: src/G4LowEPComptonModel.cc.o
+
+.PHONY : src/G4LowEPComptonModel.o
+
+# target to build an object file
+src/G4LowEPComptonModel.cc.o:
+	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/G4LowEPComptonModel.cc.o
+.PHONY : src/G4LowEPComptonModel.cc.o
+
+src/G4LowEPComptonModel.i: src/G4LowEPComptonModel.cc.i
+
+.PHONY : src/G4LowEPComptonModel.i
+
+# target to preprocess a source file
+src/G4LowEPComptonModel.cc.i:
+	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/G4LowEPComptonModel.cc.i
+.PHONY : src/G4LowEPComptonModel.cc.i
+
+src/G4LowEPComptonModel.s: src/G4LowEPComptonModel.cc.s
+
+.PHONY : src/G4LowEPComptonModel.s
+
+# target to generate assembly for a file
+src/G4LowEPComptonModel.cc.s:
+	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/G4LowEPComptonModel.cc.s
+.PHONY : src/G4LowEPComptonModel.cc.s
+
 src/Particle.o: src/Particle.cc.o
 
 .PHONY : src/Particle.o
@@ -719,6 +746,9 @@ help:
 	@echo "... src/G4KleinNishinaModel.o"
 	@echo "... src/G4KleinNishinaModel.i"
 	@echo "... src/G4KleinNishinaModel.s"
+	@echo "... src/G4LowEPComptonModel.o"
+	@echo "... src/G4LowEPComptonModel.i"
+	@echo "... src/G4LowEPComptonModel.s"
 	@echo "... src/Particle.o"
 	@echo "... src/Particle.i"
 	@echo "... src/Particle.s"

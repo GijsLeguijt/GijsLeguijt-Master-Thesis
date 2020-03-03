@@ -93,7 +93,7 @@ void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
         G4PrimaryVertex *pVertex    = new G4PrimaryVertex(pTrack->GetPosition(), 0.);
         
         G4PrimaryParticle *pPrimary = new G4PrimaryParticle(pTrack->GetDefinition(), dPX, dPY, dPZ);
-        pPrimary->SetMass(pTrack->GetDefinition()->GetPDGMass());
+        pPrimary->SetMass(  pTrack->GetDefinition()->GetPDGMass());
         pPrimary->SetCharge(pTrack->GetDefinition()->GetPDGCharge());
         
         pVertex->SetPrimary(pPrimary);

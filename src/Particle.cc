@@ -7,6 +7,7 @@
 #include <RunAction.hh>
 #include <Randomize.hh>
 #include <G4KleinNishinaModel.hh>
+#include <G4LowEPComptonModel.hh>
 #include <G4MaterialCutsCouple.hh>
 #include <G4DynamicParticle.hh>
 #include <G4Track.hh>
@@ -437,8 +438,8 @@ G4double Particle::Do_compton()
      * the function overwrites the ProductionCutsTable, but this should not cause issues
      */
 
-    
-    //-----------------------------------------Irrelevant variables-----------------------------------------
+
+   //-----------------------------------------Irrelevant variables-----------------------------------------
     //G4KleinNishinaModel's SampleSecondaries requires following 2 variables but doesn't use them
     G4double tmin      = 0;    
     G4double maxEnergy = 0;
@@ -465,21 +466,22 @@ G4double Particle::Do_compton()
     //
     G4ProductionCutsTable * pprod_cuttable = G4ProductionCutsTable::GetProductionCutsTable();
     const G4MaterialCutsCouple * pmat_cuts = pprod_cuttable->GetMaterialCutsCouple(0); //selecting a couple to overwrite
+    //pmat_cuts->SetMaterial(m_material);
+    //G4cout << pmat_cuts->GetMaterial()->GetName() << G4endl;
     G4ProductionCuts          * pprod_cuts = pmat_cuts->GetProductionCuts();
     pprod_cuts->SetProductionCut(m_prod_cut);                                                    //overwriting the table
-    
+
     G4ParticleChangeForGamma    Gammainfo;                                        //storage for new direction and energy
     G4ParticleChangeForGamma * pGammainfo = &Gammainfo;
     
     //
-    // Actual KN model, initialisation and afterwards compton scattering
+    // Actual LEP compton model, initialisation and afterwards compton scattering
     //
-    G4KleinNishinaModel KNmodel = G4KleinNishinaModel();
-    KNmodel.SetParticleChange(pGammainfo);                                          //makes sure it uses correct storage
-    KNmodel.Initialise(part_def, cuts);
-    
+    (*m_LEPmodel).SetParticleChange(pGammainfo);                                          //makes sure it uses correct storage
+    (*m_LEPmodel).Initialise(part_def, cuts);
+
     //do the scattering
-    KNmodel.SampleSecondaries(pvec_elec, pmat_cuts, ppart_dyn, tmin, maxEnergy);
+    (*m_LEPmodel).SampleSecondaries(pvec_elec, pmat_cuts, ppart_dyn, tmin, maxEnergy);
 
     //hook to the scattered electron, in case it's needed
     //G4DynamicParticle * electron = pvec_elec->at(0);    
@@ -517,7 +519,7 @@ Zoeken op "look into this!"
 Zoeken op: "LXe" en zorgen dat dit correcte materiaal is (ook in .hh)
 Zoeken op "std::string Particle::Select_scatter_process()", compton vs inverse?
 Zoeken op "redundant"
-
+Zoeken op "pmat_cuts", deze geeft nu nog G4AIR, maar moet LXe zijn
 
 
 Neutrons: geant4 user guide for application devellopers: 5.2.2.3

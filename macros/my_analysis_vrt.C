@@ -1,14 +1,14 @@
-#define my_analysis_cxx
-#include "my_analysis.h"
+#define my_analysis_vrt_cxx
+#include "my_analysis_vrt.h"
 #include <TH2.h>
 #include <TStyle.h>
 #include <TCanvas.h>
 
-void my_analysis::Loop()
+void my_analysis_vrt::Loop()
 {
 //   In a ROOT session, you can do:
-//      root> .L my_analysis.C
-//      root> my_analysis t
+//      root> .L my_analysis_vrt.C
+//      root> my_analysis_vrt t
 //      root> t.GetEntry(12); // Fill t data members with entry number 12
 //      root> t.Show();       // Show values of entry 12
 //      root> t.Show(16);     // Read and show values of entry 16
@@ -59,79 +59,18 @@ void my_analysis::Loop()
       vector<float> y = * yp;
       vector<float> z = * zp;
       vector<float> e = * ed;
-      vector<float> t = * time;
-      vector<string> par_type = * parenttype;
       vector<string> dep_proc = * edproc;
 
       struct Hits //data-structure of individual hits
       {
-         float x, y, z, e, t;
-         string parent, process;
+         float x, y, z, e;
+         string process;
       };
 
       std::vector<Hits> hits, clusters; //hits are individual hits, clusters are clustered hits
 
       for (int i = 0; i < x.size(); i++){
-         hits.push_back({x[i],y[i],z[i],e[i],t[i],par_type[i],dep_proc[i]});
-      }
-
-      //sorting the hits in ascending time order
-      sort(hits.begin(), hits.end(), [](const Hits& h1, const Hits& h2) { return h1.t < h2.t; });
-
-
-      //
-      // Clustering of hits
-      //
-      for (Long64_t i = 0; i < hits.size(); i++) {
-
-         if (hits[i].parent != "none"){//not primary particle
-            continue;
-         }
-
-         if (hits[i].e == 0){//G4 also adds hits without energy deposits, e.g. transport
-            continue;
-         }
-
-         float xx   = 0;
-         float yy   = 0;
-         float zz   = 0;
-         float ee   = 0;
-         float tt   = 0;
-         int n_prim = 0;
-
-         for (Long64_t j = i; j < hits.size(); j++) {
-
-            if (hits[j].parent == "none"){//if primary particle
-               n_prim += 1;
-            }
-
-            if (n_prim > 1){//everything happening after next primary reaction belongs to that reaction
-               break;
-            }
-
-            //
-            // Averaging using energy as weight
-            //
-            double x2 = hits[j].x;
-            double y2 = hits[j].y;
-            double z2 = hits[j].z;
-            double e2 = hits[j].e;
-            double t2 = hits[j].t;
-
-            xx += x2 * e2;
-            yy += y2 * e2;
-            zz += z2 * e2;
-            tt += t2 * e2;
-            ee += e2;
-         }
-
-         xx /= ee;
-         yy /= ee;
-         zz /= ee;
-         tt /= ee;
-
-         clusters.push_back({xx,yy,zz,ee,tt,par_type[i],dep_proc[i]});
-
+         hits.push_back({x[i],y[i],z[i],e[i],dep_proc[i]});
       }
 
       //
