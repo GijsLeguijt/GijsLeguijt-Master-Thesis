@@ -8,6 +8,8 @@ CMakeFiles/G4simu.dir/G4simu.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Allocator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AllocatorPool.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ApplicationState.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AtomicShell.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AtomicShellEnumerator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AutoLock.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AuxiliaryNavServices.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AuxiliaryNavServices.icc
@@ -36,7 +38,10 @@ CMakeFiles/G4simu.dir/G4simu.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Element.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ElementTable.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ElementVector.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmCalculator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmElementSelector.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmParameters.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmSaturation.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Event.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EventManager.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ExceptionSeverity.hh
@@ -95,6 +100,7 @@ CMakeFiles/G4simu.dir/G4simu.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MaterialTable.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ModelingParameters.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ModelingParameters.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MscStepLimitType.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NavigationHistory.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NavigationHistory.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NavigationHistoryPool.hh
@@ -105,9 +111,13 @@ CMakeFiles/G4simu.dir/G4simu.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NavigationLogger.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Navigator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Navigator.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NistElementBuilder.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NistManager.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NistMaterialBuilder.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Normal3D.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NormalNavigation.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NormalNavigation.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NuclearFormfactorType.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NullModel.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4OpenGLImmediateQt.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4OpenGLImmediateX.hh
@@ -144,6 +154,7 @@ CMakeFiles/G4simu.dir/G4simu.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsVectorType.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Plane3D.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Point3D.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Pow.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PrimaryParticle.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PrimaryTransformer.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PrimaryVertex.hh
@@ -235,6 +246,7 @@ CMakeFiles/G4simu.dir/G4simu.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UserStackingAction.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UserSteppingAction.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UserTrackingAction.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VAtomDeexcitation.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VBasicShell.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VDigi.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VDigiCollection.hh
@@ -476,6 +488,7 @@ CMakeFiles/G4simu.dir/G4simu.cc.o
  include/AnalysisManager.hh
  include/DetectorConstruction.hh
  include/EventAction.hh
+ include/Particle.hh
  include/PhysicsList.hh
  include/PhysicsMessenger.hh
  include/PrimaryGeneratorAction.hh
@@ -978,6 +991,8 @@ CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Allocator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AllocatorPool.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ApplicationState.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AtomicShell.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AtomicShellEnumerator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AutoLock.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4DataVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4DataVector.icc
@@ -987,17 +1002,24 @@ CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Element.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ElementTable.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ElementVector.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmCalculator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmElementSelector.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmParameters.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmSaturation.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ExceptionSeverity.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Exp.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4GeomSplitter.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IonisParamElm.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IonisParamMat.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Isotope.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IsotopeVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LPhysicsFreeVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Log.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LogicalVolume.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LogicalVolume.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LorentzVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LowEPComptonModel.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MCCIndexConversionTable.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MTHepRandom.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MTHepRandom.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MTRandBit.hh
@@ -1021,6 +1043,11 @@ CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MaterialPropertiesTable.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MaterialPropertyVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MaterialTable.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MscStepLimitType.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NistElementBuilder.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NistManager.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NistMaterialBuilder.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NuclearFormfactorType.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4OrderedTable.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PDefManager.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.hh
@@ -1031,13 +1058,25 @@ CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleTableIterator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsFreeVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsLogVector.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsModelCatalog.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsOrderedFreeVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsVector.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsVectorType.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Pow.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ProductionCuts.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ProductionCutsTable.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ReferenceCountedHandle.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Region.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Region.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4RotationMatrix.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4SandiaTable.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Step.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Step.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4StepPoint.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4StepPoint.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4StepStatus.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4SteppingControl.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4String.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4String.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Threading.hh
@@ -1045,6 +1084,11 @@ CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Timer.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Timer.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Tokenizer.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TouchableHandle.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Track.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Track.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TrackStatus.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TrackVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Types.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UIcmdWith3Vector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UIcmdWith3VectorAndUnit.hh
@@ -1059,15 +1103,24 @@ CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UImessenger.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UIparameter.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UItokenNum.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VAtomDeexcitation.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmAngularDistribution.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmFluctuationModel.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmModel.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VPhysicalVolume.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VPhysicalVolume.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VTouchable.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VTouchable.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VUserTrackInformation.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ios.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/Randomize.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/geomdefs.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/geomwdefs.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/pwdefs.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/templates.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/tls.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/trkdefs.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/windefs.hh
  /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/DllImport.h
  /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/ESTLType.h
@@ -1196,6 +1249,7 @@ CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o
  /user/glegu/testsim/modusim/src/AnalysisMessenger.cc
  include/AnalysisManager.hh
  include/AnalysisMessenger.hh
+ include/Particle.hh
 CMakeFiles/G4simu.dir/src/DetectorConstruction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AffineTransform.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AffineTransform.icc
@@ -1991,6 +2045,8 @@ CMakeFiles/G4simu.dir/src/DetectorMessenger.cc.o
 CMakeFiles/G4simu.dir/src/EventAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Allocator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AllocatorPool.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AtomicShell.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AtomicShellEnumerator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AutoLock.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4DCofThisEvent.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4DataVector.hh
@@ -2001,10 +2057,14 @@ CMakeFiles/G4simu.dir/src/EventAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Element.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ElementTable.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ElementVector.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmCalculator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmElementSelector.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmParameters.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmSaturation.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Event.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ExceptionSeverity.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Exp.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4GeomSplitter.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4HCofThisEvent.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IonisParamElm.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IonisParamMat.hh
@@ -2012,8 +2072,11 @@ CMakeFiles/G4simu.dir/src/EventAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IsotopeVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LPhysicsFreeVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Log.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LogicalVolume.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LogicalVolume.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LorentzVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LowEPComptonModel.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MCCIndexConversionTable.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MTHepRandom.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MTHepRandom.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MTRandBit.hh
@@ -2037,6 +2100,11 @@ CMakeFiles/G4simu.dir/src/EventAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MaterialPropertiesTable.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MaterialPropertyVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MaterialTable.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MscStepLimitType.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NistElementBuilder.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NistManager.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NistMaterialBuilder.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NuclearFormfactorType.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4OrderedTable.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PDefManager.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.hh
@@ -2044,37 +2112,64 @@ CMakeFiles/G4simu.dir/src/EventAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleMomentum.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsFreeVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsLogVector.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsModelCatalog.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsOrderedFreeVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsVector.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsVectorType.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Pow.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PrimaryParticle.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PrimaryVertex.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ProductionCuts.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ProductionCutsTable.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ReferenceCountedHandle.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Region.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Region.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4RotationMatrix.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4SandiaTable.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Step.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Step.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4StepPoint.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4StepPoint.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4StepStatus.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4SteppingControl.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4String.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4String.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Threading.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ThreeVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Timer.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Timer.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TouchableHandle.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Track.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Track.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TrackStatus.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TrackVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TrajectoryContainer.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Types.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UserEventAction.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VAtomDeexcitation.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VDigiCollection.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmAngularDistribution.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmFluctuationModel.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmModel.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VHitsCollection.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VPhysicalVolume.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VPhysicalVolume.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VTouchable.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VTouchable.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VTrajectory.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VUserEventInformation.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VUserTrackInformation.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ios.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/Randomize.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/evtdefs.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/geomdefs.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/geomwdefs.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/pwdefs.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/templates.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/tls.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/trkdefs.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/windefs.hh
  /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/DllImport.h
  /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/ESTLType.h
@@ -2182,8 +2277,20 @@ CMakeFiles/G4simu.dir/src/EventAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Utility/memory.h
  /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Utility/noncopyable.h
  /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Utility/thread_local.h
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/AxisAngle.h
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/AxisAngle.icc
  /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/LorentzVector.h
  /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/LorentzVector.icc
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/Rotation.h
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/Rotation.icc
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationInterfaces.h
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationInterfaces.icc
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationX.h
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationX.icc
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationY.h
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationY.icc
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationZ.h
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationZ.icc
  /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/ThreeVector.h
  /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/ThreeVector.icc
  /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/ZMxpv.h
@@ -2191,6 +2298,7 @@ CMakeFiles/G4simu.dir/src/EventAction.cc.o
  /user/glegu/testsim/modusim/src/EventAction.cc
  include/AnalysisManager.hh
  include/EventAction.hh
+ include/Particle.hh
 CMakeFiles/G4simu.dir/src/EventData.cc.o
  /user/glegu/testsim/modusim/src/EventData.cc
  include/EventData.hh
@@ -3979,6 +4087,8 @@ CMakeFiles/G4simu.dir/src/RunAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Allocator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AllocatorPool.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ApplicationState.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AtomicShell.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AtomicShellEnumerator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AutoLock.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4DataVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4DataVector.icc
@@ -3988,17 +4098,24 @@ CMakeFiles/G4simu.dir/src/RunAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Element.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ElementTable.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ElementVector.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmCalculator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmElementSelector.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmParameters.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmSaturation.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ExceptionSeverity.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Exp.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4GeomSplitter.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IonisParamElm.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IonisParamMat.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Isotope.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IsotopeVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LPhysicsFreeVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Log.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LogicalVolume.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LogicalVolume.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LorentzVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LowEPComptonModel.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MCCIndexConversionTable.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MTHepRandom.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MTHepRandom.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MTRandBit.hh
@@ -4022,6 +4139,11 @@ CMakeFiles/G4simu.dir/src/RunAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MaterialPropertiesTable.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MaterialPropertyVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MaterialTable.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MscStepLimitType.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NistElementBuilder.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NistManager.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NistMaterialBuilder.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NuclearFormfactorType.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4OrderedTable.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PDefManager.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.hh
@@ -4029,18 +4151,36 @@ CMakeFiles/G4simu.dir/src/RunAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleMomentum.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsFreeVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsLogVector.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsModelCatalog.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsOrderedFreeVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsVector.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsVectorType.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Pow.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ProductionCuts.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ProductionCutsTable.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ReferenceCountedHandle.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Region.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Region.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4RotationMatrix.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4SandiaTable.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Step.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Step.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4StepPoint.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4StepPoint.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4StepStatus.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4SteppingControl.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4String.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4String.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Threading.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ThreeVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Timer.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Timer.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TouchableHandle.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Track.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Track.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TrackStatus.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TrackVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Types.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UIcommand.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UIdirectory.hh
@@ -4048,15 +4188,24 @@ CMakeFiles/G4simu.dir/src/RunAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UIparameter.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UItokenNum.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UserRunAction.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VAtomDeexcitation.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmAngularDistribution.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmFluctuationModel.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmModel.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VPhysicalVolume.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VPhysicalVolume.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VTouchable.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VTouchable.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VUserTrackInformation.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ios.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/Randomize.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/geomdefs.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/geomwdefs.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/globals.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/pwdefs.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/templates.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/tls.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/trkdefs.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/windefs.hh
  /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/DllImport.h
  /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.14.04-820c6/x86_64-centos7-gcc8-opt/include/ESTLType.h
@@ -4164,14 +4313,27 @@ CMakeFiles/G4simu.dir/src/RunAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Utility/memory.h
  /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Utility/noncopyable.h
  /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Utility/thread_local.h
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/AxisAngle.h
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/AxisAngle.icc
  /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/LorentzVector.h
  /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/LorentzVector.icc
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/Rotation.h
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/Rotation.icc
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationInterfaces.h
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationInterfaces.icc
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationX.h
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationX.icc
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationY.h
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationY.icc
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationZ.h
+ /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/RotationZ.icc
  /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/ThreeVector.h
  /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/ThreeVector.icc
  /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/ZMxpv.h
  /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/defs.h
  /user/glegu/testsim/modusim/src/RunAction.cc
  include/AnalysisManager.hh
+ include/Particle.hh
  include/RunAction.hh
  include/RunActionMessenger.hh
 CMakeFiles/G4simu.dir/src/RunActionMessenger.cc.o
@@ -4476,6 +4638,8 @@ CMakeFiles/G4simu.dir/src/StackingAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AntiXibZero.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AntiXicPlus.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AntiXicZero.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AtomicShell.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AtomicShellEnumerator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AutoLock.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4BMesonMinus.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4BMesonPlus.hh
@@ -4499,7 +4663,10 @@ CMakeFiles/G4simu.dir/src/StackingAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Element.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ElementTable.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ElementVector.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmCalculator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmElementSelector.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmParameters.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmSaturation.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Eta.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EtaPrime.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Etac.hh
@@ -4535,6 +4702,7 @@ CMakeFiles/G4simu.dir/src/StackingAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LogicalVolume.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LorentzVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LowEPComptonModel.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MCCIndexConversionTable.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MTHepRandom.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MTHepRandom.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MTRandBit.hh
@@ -4558,12 +4726,17 @@ CMakeFiles/G4simu.dir/src/StackingAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MaterialPropertiesTable.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MaterialPropertyVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MaterialTable.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MscStepLimitType.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MuonMinus.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MuonPlus.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NeutrinoE.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NeutrinoMu.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NeutrinoTau.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Neutron.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NistElementBuilder.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NistManager.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NistMaterialBuilder.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NuclearFormfactorType.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4OmegaMinus.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4OmegabMinus.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4OmegacZero.hh
@@ -4589,10 +4762,12 @@ CMakeFiles/G4simu.dir/src/StackingAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PionPlus.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PionZero.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Positron.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Pow.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PrimaryParticle.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PrimaryVertex.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ProcessType.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ProductionCuts.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ProductionCutsTable.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Proton.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ReferenceCountedHandle.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Region.hh
@@ -4638,6 +4813,7 @@ CMakeFiles/G4simu.dir/src/StackingAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UnknownParticle.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Upsilon.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UserStackingAction.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VAtomDeexcitation.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VDigiCollection.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmAngularDistribution.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmFluctuationModel.hh
@@ -4798,12 +4974,15 @@ CMakeFiles/G4simu.dir/src/StackingAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/defs.h
  /user/glegu/testsim/modusim/src/StackingAction.cc
  include/AnalysisManager.hh
+ include/Particle.hh
  include/StackingAction.hh
 CMakeFiles/G4simu.dir/src/SteppingAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AffineTransform.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AffineTransform.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Allocator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AllocatorPool.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AtomicShell.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AtomicShellEnumerator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AutoLock.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AuxiliaryNavServices.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4AuxiliaryNavServices.icc
@@ -4817,7 +4996,10 @@ CMakeFiles/G4simu.dir/src/SteppingAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Element.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ElementTable.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ElementVector.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmCalculator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmElementSelector.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmParameters.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmSaturation.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ExceptionSeverity.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Exp.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4FastVector.hh
@@ -4838,6 +5020,7 @@ CMakeFiles/G4simu.dir/src/SteppingAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LogicalVolume.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LorentzVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LowEPComptonModel.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MCCIndexConversionTable.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MTHepRandom.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MTHepRandom.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MTRandBit.hh
@@ -4861,6 +5044,7 @@ CMakeFiles/G4simu.dir/src/SteppingAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MaterialPropertiesTable.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MaterialPropertyVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MaterialTable.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4MscStepLimitType.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NavigationHistory.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NavigationHistory.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NavigationHistoryPool.hh
@@ -4871,8 +5055,12 @@ CMakeFiles/G4simu.dir/src/SteppingAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NavigationLogger.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Navigator.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Navigator.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NistElementBuilder.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NistManager.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NistMaterialBuilder.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NormalNavigation.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NormalNavigation.icc
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NuclearFormfactorType.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4OrderedTable.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PDefManager.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParameterisedNavigation.hh
@@ -4891,12 +5079,14 @@ CMakeFiles/G4simu.dir/src/SteppingAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsVector.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PhysicsVectorType.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Pow.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ProcessManager.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ProcessManager.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ProcessType.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ProcessVector.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ProcessVector.icc
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ProductionCuts.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ProductionCutsTable.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ReferenceCountedHandle.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Region.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Region.icc
@@ -4936,6 +5126,7 @@ CMakeFiles/G4simu.dir/src/SteppingAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Transform3D.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Types.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4UserSteppingAction.hh
+ /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VAtomDeexcitation.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmAngularDistribution.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmFluctuationModel.hh
  /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmModel.hh
@@ -5097,6 +5288,7 @@ CMakeFiles/G4simu.dir/src/SteppingAction.cc.o
  /cvmfs/sft.cern.ch/lcg/releases/clhep/2.4.1.0-2c56f/x86_64-centos7-gcc8-opt/lib/CLHEP-2.4.1.0/../../include/CLHEP/Vector/defs.h
  /user/glegu/testsim/modusim/src/SteppingAction.cc
  include/AnalysisManager.hh
+ include/Particle.hh
  include/SteppingAction.hh
 CMakeFiles/G4simu.dir/src/fileMerger.cc.o
  /user/glegu/testsim/modusim/src/fileMerger.cc

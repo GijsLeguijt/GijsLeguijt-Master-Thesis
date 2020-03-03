@@ -9523,8 +9523,8 @@ G4ThreeVector.hh
 -
 vector
 -
-G4LowEPComptonModel.hh
--
+Particle.hh
+include/Particle.hh
 
 include/AnalysisMessenger.hh
 G4UImessenger.hh

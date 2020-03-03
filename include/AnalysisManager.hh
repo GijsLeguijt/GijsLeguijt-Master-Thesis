@@ -9,7 +9,8 @@
 #include <G4ThreeVector.hh>
 
 #include <vector>
-#include <G4LowEPComptonModel.hh>
+//#include <G4LowEPComptonModel.hh>
+#include "Particle.hh"
 
 class G4Run;
 class G4Event;
@@ -45,8 +46,7 @@ private:
 private:
     G4int m_LXeCollectionID;
     std::vector<G4int> m_CollectionIDs;
-    G4LowEPComptonModel comp_model = G4LowEPComptonModel();
-    G4LowEPComptonModel * pcomp_model = &comp_model;
+    Particle myParticle;
 
     G4String m_hDataFilename;
     G4int m_iNbEventsToSimulate;

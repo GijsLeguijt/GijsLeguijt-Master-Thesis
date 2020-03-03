@@ -139,11 +139,6 @@ AnalysisManager::BeginOfRun(const G4Run *)
     m_pNbEventsToSimulateParameter->Write();
 
     m_pTreeFile->cd();
-
-    /*size_t           x = 1; //can't be zero
-    G4DataVector  cuts = {x, 0};
-    const G4ParticleDefinition* part_def = G4ParticleTable::GetParticleTable()->FindParticle("gamma");
-    comp_model.Initialise(part_def, cuts);*/
 }
 
 //__________________________________________________________________________________________________________
@@ -188,18 +183,15 @@ AnalysisManager::BeginOfEvent(const G4Event *pEvent)
     G4ThreeVector pos = primaryVertex->GetPosition();
     G4ThreeVector mom = primaryParticle->GetMomentumDirection();
     G4double      ene = primaryParticle->GetKineticEnergy();
-  
-    Particle myParticle;
     
-    myParticle.setLEPmodel(pcomp_model);
+    myParticle.Reset();
+
     myParticle.setX0(pos);
     myParticle.setDirection(mom);
     myParticle.setEnergy(ene);
     myParticle.setX0start(pos);
     myParticle.setVrt("fiducial_scatter");
-    
     myParticle.Propagate();
-    
     m_pEventData->Clear();
     
     _events->cd();

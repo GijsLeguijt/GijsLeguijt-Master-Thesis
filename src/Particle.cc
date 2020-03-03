@@ -22,7 +22,34 @@
 //__________________________________________________________________________________________________________
 
 Particle::Particle()
-{   
+{   /*size_t           x = 1; //can't be zero
+    G4DataVector  cuts = {x, 0};
+    const G4ParticleDefinition* part_def = G4ParticleTable::GetParticleTable()->FindParticle(m_type);
+    comp_model.Initialise(part_def, cuts);*/
+}
+
+//__________________________________________________________________________________________________________
+
+void Particle::Reset()
+{   m_type         = "gamma";
+    m_vrt          = "";
+    m_debug        = false;
+    m_weight       = 1;
+    m_energy       = 0;
+    m_edep         = 0;
+    m_edep_max     = 100000 * MeV;
+    m_prod_cut     = 1      * keV;
+    m_nscatter     = 0;
+    m_nscatter_max = 1;
+    m_x0           = G4ThreeVector(0, 0, 0);
+    m_x0start      = G4ThreeVector(0, 0, 0);
+    m_direction    = G4ThreeVector(0, 0, 0);
+    m_material     = G4Material::GetMaterial("LXe");
+    m_sint         = {0,0};
+    m_edep_int     = {};
+    m_pos_int      = {};
+    m_pro_int      = {};
+
 }
 
 //__________________________________________________________________________________________________________
@@ -438,7 +465,6 @@ G4double Particle::Do_compton()
      * the function overwrites the ProductionCutsTable, but this should not cause issues
      */
 
-
    //-----------------------------------------Irrelevant variables-----------------------------------------
     //G4KleinNishinaModel's SampleSecondaries requires following 2 variables but doesn't use them
     G4double tmin      = 0;    
@@ -477,11 +503,11 @@ G4double Particle::Do_compton()
     //
     // Actual LEP compton model, initialisation and afterwards compton scattering
     //
-    (*m_LEPmodel).SetParticleChange(pGammainfo);                                          //makes sure it uses correct storage
-    (*m_LEPmodel).Initialise(part_def, cuts);
+    comp_model.SetParticleChange(pGammainfo);                                          //makes sure it uses correct storage
+    comp_model.Initialise(part_def, cuts);
 
     //do the scattering
-    (*m_LEPmodel).SampleSecondaries(pvec_elec, pmat_cuts, ppart_dyn, tmin, maxEnergy);
+    comp_model.SampleSecondaries(pvec_elec, pmat_cuts, ppart_dyn, tmin, maxEnergy);
 
     //hook to the scattered electron, in case it's needed
     //G4DynamicParticle * electron = pvec_elec->at(0);    

@@ -19,6 +19,7 @@ class Particle
 {
 public:
     Particle();
+    void                  Reset();
     void                  Print(G4bool extended = false);
     void                  Propagate();
     void                  Save_interaction(G4ThreeVector position, G4double deposit, std::string process);
@@ -35,6 +36,7 @@ private:
     std::vector<G4double> sort_vector(std::vector<G4double> s1, std::vector<G4double> s2);
     G4double              Random_uniform(G4double min, G4double max);
     G4EmCalculator        emCalc;
+    G4LowEPComptonModel   comp_model = G4LowEPComptonModel();
     
 private:
     //Parameters
@@ -56,8 +58,6 @@ private:
     std::vector<G4double>      m_edep_int     = {};                              //Interaction deposits
     std::vector<G4ThreeVector> m_pos_int      = {};                              //Interaction points
     std::vector<std::string>   m_pro_int      = {};                              //Interaction processes
-
-    G4LowEPComptonModel  *      m_LEPmodel     = 0;
     
 
   
@@ -81,8 +81,6 @@ public:
     void setEdep_int(std::vector<G4double> edep_int)    {m_edep_int     = edep_int;}
     void setPos_int(std::vector<G4ThreeVector> pos_int) {m_pos_int      = pos_int;}
     void setPro_int(std::vector<std::string> pro_int)   {m_pro_int      = pro_int;}
-
-    void setLEPmodel(G4LowEPComptonModel * LEPmodel)      {m_LEPmodel     = LEPmodel;}
     
     //Gets
     std::string                getType()         { return m_type; }
@@ -103,8 +101,6 @@ public:
     std::vector<G4double>      getEdep_int()     { return m_edep_int; }
     std::vector<G4ThreeVector> getPos_int()      { return m_pos_int; }
     std::vector<std::string>   getPro_int()      { return m_pro_int; }
-
-    G4LowEPComptonModel *       getLEPmodel()     { return m_LEPmodel; } 
     
 };
 
