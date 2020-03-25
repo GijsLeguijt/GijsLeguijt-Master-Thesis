@@ -139,6 +139,8 @@ AnalysisManager::BeginOfRun(const G4Run *)
     m_pNbEventsToSimulateParameter->Write();
 
     m_pTreeFile->cd();
+
+    myParticle.Initialise();
 }
 
 //__________________________________________________________________________________________________________

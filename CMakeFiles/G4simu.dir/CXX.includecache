@@ -9233,8 +9233,6 @@ DetectorConstruction.hh
 /user/glegu/testsim/modusim/src/DetectorConstruction.hh
 G4EmCalculator.hh
 -
-cmath
--
 G4Material.hh
 -
 RunAction.hh
@@ -9256,6 +9254,18 @@ G4ParticleDefinition.hh
 G4ParticleTable.hh
 -
 G4DataVector.hh
+-
+cmath
+-
+iostream
+-
+fstream
+-
+vector
+-
+string
+-
+sstream
 -
 G4ParticleChangeForGamma.hh
 /user/glegu/testsim/modusim/src/G4ParticleChangeForGamma.hh
@@ -9590,6 +9600,10 @@ G4EmCalculator.hh
 Randomize.hh
 -
 G4LowEPComptonModel.hh
+-
+G4ParticleChangeForGamma.hh
+include/G4ParticleChangeForGamma.hh
+G4KleinNishinaModel.hh
 -
 
 include/PhysicsList.hh

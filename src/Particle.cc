@@ -2,7 +2,6 @@
 #include <G4NistManager.hh>
 #include "DetectorConstruction.hh"
 #include <G4EmCalculator.hh>
-#include <cmath>
 #include <G4Material.hh>
 #include <RunAction.hh>
 #include <Randomize.hh>
@@ -15,6 +14,13 @@
 #include <G4ParticleTable.hh>
 #include <G4DataVector.hh>
 
+#include <cmath>
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+#include <sstream>
+
 #include "G4ParticleChangeForGamma.hh"
 #include "G4VEmModel.hh"
 #include "G4ProductionCutsTable.hh"
@@ -22,22 +28,35 @@
 //__________________________________________________________________________________________________________
 
 Particle::Particle()
-{   /*size_t           x = 1; //can't be zero
-    G4DataVector  cuts = {x, 0};
-    const G4ParticleDefinition* part_def = G4ParticleTable::GetParticleTable()->FindParticle(m_type);
-    comp_model.Initialise(part_def, cuts);*/
+{   
 }
 
 //__________________________________________________________________________________________________________
 
-void Particle::Reset()
-{   m_type         = "gamma";
+void Particle::Initialise()
+{   /*
+     * 
+     */
+
+
+    //G4KleinNishinaModel's Initialise requires following cut, which eventually ends up in
+    //ComputeCrossSectionPerAtom, which doesn't use it
+    size_t           x = 1; //can't be zero
+    G4DataVector  cuts = {x, 0};
+    const G4ParticleDefinition* part_def = G4ParticleTable::GetParticleTable()->FindParticle(m_type);
+
+    G4ParticleChangeForGamma * pGammainfo = &Gammainfo;
+    comp_model.SetParticleChange(pGammainfo);                                          //makes sure it uses correct storage
+
+    comp_model.Initialise(part_def, cuts);
+    
+    m_type         = "gamma";
     m_vrt          = "";
     m_debug        = false;
     m_weight       = 1;
     m_energy       = 0;
     m_edep         = 0;
-    m_edep_max     = 100000 * MeV;
+    m_edep_max     = 200    * keV;
     m_prod_cut     = 1      * keV;
     m_nscatter     = 0;
     m_nscatter_max = 1;
@@ -45,6 +64,44 @@ void Particle::Reset()
     m_x0start      = G4ThreeVector(0, 0, 0);
     m_direction    = G4ThreeVector(0, 0, 0);
     m_material     = G4Material::GetMaterial("LXe");
+    m_sint         = {0,0};
+    m_edep_int     = {};
+    m_pos_int      = {};
+    m_pro_int      = {};
+
+    /* Reading in the LookUpTable for photons*/
+    std::ifstream file ("LUT_photon.csv");
+	
+	std::string row, value;                                 //entire row and individual values
+	
+	std::vector < double > LUT_row;                            //row to be appended to the LUT
+
+	while ( file.good() )
+	{	std::getline(file, row); 
+  
+        std::stringstream s(row); 
+
+		LUT_row.clear();
+		
+		while (std::getline(s, value, ',')) { 
+            LUT_row.push_back(std::stod(value));
+        }
+
+		photon_LUT.push_back(LUT_row);		
+    	
+	}
+}
+
+//__________________________________________________________________________________________________________
+
+void Particle::Reset()
+{   m_weight       = 1;
+    m_energy       = 0;
+    m_edep         = 0;
+    m_nscatter     = 0;
+    m_x0           = G4ThreeVector(0, 0, 0);
+    m_x0start      = G4ThreeVector(0, 0, 0);
+    m_direction    = G4ThreeVector(0, 0, 0);
     m_sint         = {0,0};
     m_edep_int     = {};
     m_pos_int      = {};
@@ -289,8 +346,7 @@ void Particle::Propagate()
                 {        
                     //s_max = cryostat_intersections[0]; // was in python code, seems redundant
 
-                    m_weight *= Get_att_probability(s_max); // chance to leave the detector without more interactions
-                        
+                    m_weight *= Get_att_probability(s_max); // chance to leave the detector without more interactions  
                     terminate = true;
                     continue;
                 }
@@ -469,11 +525,6 @@ G4double Particle::Do_compton()
     //G4KleinNishinaModel's SampleSecondaries requires following 2 variables but doesn't use them
     G4double tmin      = 0;    
     G4double maxEnergy = 0;
-    
-    //G4KleinNishinaModel's Initialise requires following cut, which eventually ends up in
-    //ComputeCrossSectionPerAtom, which doesn't use it
-    size_t           x = 1; //can't be zero
-    G4DataVector  cuts = {x, 0};
     //------------------------------------------------------------------------------------------------------
     
     
@@ -491,32 +542,32 @@ G4double Particle::Do_compton()
     //CAREFUL: this overwrites the productioncuts table, however, the table should not be used anymore anyway
     //
     G4ProductionCutsTable * pprod_cuttable = G4ProductionCutsTable::GetProductionCutsTable();
-    const G4MaterialCutsCouple * pmat_cuts = pprod_cuttable->GetMaterialCutsCouple(0); //selecting a couple to overwrite
-    //pmat_cuts->SetMaterial(m_material);
+    const G4MaterialCutsCouple * pmat_cuts = pprod_cuttable->GetMaterialCutsCouple(1); //selecting a couple to overwrite
+                                                                                       //LXe manually chosen, must change!
     //G4cout << pmat_cuts->GetMaterial()->GetName() << G4endl;
     G4ProductionCuts          * pprod_cuts = pmat_cuts->GetProductionCuts();
     pprod_cuts->SetProductionCut(m_prod_cut);                                                    //overwriting the table
 
-    G4ParticleChangeForGamma    Gammainfo;                                        //storage for new direction and energy
-    G4ParticleChangeForGamma * pGammainfo = &Gammainfo;
-    
-    //
-    // Actual LEP compton model, initialisation and afterwards compton scattering
-    //
-    comp_model.SetParticleChange(pGammainfo);                                          //makes sure it uses correct storage
-    comp_model.Initialise(part_def, cuts);
-
+    G4int tries = 0;
+    G4double new_energy;
+    G4double edep;
     //do the scattering
-    comp_model.SampleSecondaries(pvec_elec, pmat_cuts, ppart_dyn, tmin, maxEnergy);
+    do
+    {   tries++;
+        comp_model.SampleSecondaries(pvec_elec, pmat_cuts, ppart_dyn, tmin, maxEnergy);
+        
+        new_energy = Gammainfo.GetProposedKineticEnergy();
+
+        edep = (m_energy - new_energy);
+    }while(edep > m_edep_max);
 
     //hook to the scattered electron, in case it's needed
     //G4DynamicParticle * electron = pvec_elec->at(0);    
 
     //saving data to the particle    
     m_direction         = Gammainfo.GetProposedMomentumDirection();
-    G4double new_energy = Gammainfo.GetProposedKineticEnergy();
-
-    G4double edep = (m_energy - new_energy);
+    
+    m_weight     *= Cut_weight();
     m_edep       += edep;
     m_energy      = new_energy;          
     m_nscatter   += 1;
@@ -534,6 +585,29 @@ void Particle::Save_interaction(G4ThreeVector position, G4double deposit, std::s
     m_pos_int.push_back(position);
     m_edep_int.push_back(deposit);
     m_pro_int.push_back(process);
+}
+
+//__________________________________________________________________________________________________________
+
+G4double Particle::Cut_weight()
+{   
+    std::vector < std::vector < G4double > > LUT;
+    G4int row, column;
+
+    if (m_edep_max > 1 * MeV){
+        return 1;
+    }
+
+    if (m_type == "gamma"){
+        LUT = photon_LUT;
+    }
+
+    column = (m_energy * 1000 - 150) / 50;
+    row = (m_edep_max * 1000 - 2) / 2;
+
+    G4double frac = LUT[row][column];
+
+    return frac;   
 }
 
 

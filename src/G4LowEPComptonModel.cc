@@ -241,6 +241,7 @@ void G4LowEPComptonModel::SampleSecondaries(std::vector<G4DynamicParticle*>* fve
   const G4Element* elm = SelectRandomAtom(couple,particle,photonEnergy0);
   G4int Z = (G4int)elm->GetZ();
 
+  //G4double LowEPCepsilon0 = std::max(1./(1 + 2*e0m),(photonEnergy0-100*keV)/photonEnergy0);
   G4double LowEPCepsilon0 = 1. / (1. + 2. * e0m);
   G4double LowEPCepsilon0Sq = LowEPCepsilon0 * LowEPCepsilon0;
   G4double alpha1 = -std::log(LowEPCepsilon0);
@@ -283,6 +284,8 @@ void G4LowEPComptonModel::SampleSecondaries(std::vector<G4DynamicParticle*>* fve
   G4double diry = sinTheta * std::sin(phi);
   G4double dirz = cosTheta ;
 
+  //Hier nog geen "probleem", geen deposits > 800keV
+  //if(LowEPCepsilon < 0.2) {G4cout << LowEPCepsilon << G4endl;}                                      //print statement
   
   // Scatter photon energy and Compton electron direction - Method based on:
   // J. M. C. Brown, M. R. Dimmock, J. E. Gillam and D. M. Paganin'
@@ -312,6 +315,7 @@ void G4LowEPComptonModel::SampleSecondaries(std::vector<G4DynamicParticle*>* fve
   G4double sinThetaE =0;
   G4double cosThetaE =0;
   G4int iteration = 0; 
+  
   do{
     
       
@@ -332,7 +336,7 @@ void G4LowEPComptonModel::SampleSecondaries(std::vector<G4DynamicParticle*>* fve
       
       shellIdx = shellData.SelectRandomShell(Z);
       bindingE = shellData.BindingEnergy(Z,shellIdx)/MeV; 
-      
+      //G4cout << shellIdx << " ";                                                                                         //print statement
       //G4cout << "New sample" << G4endl;
       
       // Randomly sample bound electron momentum (memento: the data set is in Atomic Units)
@@ -341,11 +345,12 @@ void G4LowEPComptonModel::SampleSecondaries(std::vector<G4DynamicParticle*>* fve
       // Convert to SI units
       
       G4double ePSI = ePAU * momentum_au_to_nat;
-      
+      //G4cout << ePSI << " ";                                                                                         //print statement
       //Calculate bound electron velocity and normalise to natural units
       
-      u_temp = sqrt( ((ePSI*ePSI)*(vel_c*vel_c)) / ((e_mass_kg*e_mass_kg)*(vel_c*vel_c)+(ePSI*ePSI)))/vel_c;  
-      
+      u_temp = sqrt( ((ePSI*ePSI)*(vel_c*vel_c)) / ((e_mass_kg*e_mass_kg)*(vel_c*vel_c)+(ePSI*ePSI)))/vel_c;
+      //beta soms >0.4???
+      //G4cout << u_temp << G4endl;                                                                                           //print statement
       // Sample incident electron direction, amorphous material, to scattering photon scattering plane      
       
       e_alpha = pi*G4UniformRand();
@@ -355,14 +360,15 @@ void G4LowEPComptonModel::SampleSecondaries(std::vector<G4DynamicParticle*>* fve
       
       G4double eEIncident = electron_mass_c2 / sqrt( 1 - (u_temp*u_temp));
       G4double systemE = eEIncident + pEIncident;
-
+      
 
       G4double gamma_temp = 1.0 / sqrt( 1 - (u_temp*u_temp));
       G4double numerator = gamma_temp*electron_mass_c2*(1 - u_temp * std::cos(e_alpha));
       G4double subdenom1 =  u_temp*cosTheta*std::cos(e_alpha);
       G4double subdenom2 = u_temp*sinTheta*std::sin(e_alpha)*std::cos(e_beta);
       G4double denominator = (1.0 - cosTheta) +  (gamma_temp*electron_mass_c2*(1 - subdenom1 - subdenom2) / pEIncident);
-      pERecoil = (numerator/denominator);
+      //Nu wel een "probleem", deposits tot ongeveer 900 keV
+      pERecoil = (numerator/denominator); //if(pERecoil<0.2){G4cout << pERecoil << G4endl;}                                 //print statement
       eERecoil = systemE - pERecoil; 
       CE_emission_flag = pEIncident - pERecoil;
     } while ( (iteration <= maxDopplerIterations) && (CE_emission_flag < bindingE));      
@@ -513,7 +519,7 @@ void G4LowEPComptonModel::SampleSecondaries(std::vector<G4DynamicParticle*>* fve
 
   if (pERecoil > 0.)
     {
-     fParticleChange->SetProposedKineticEnergy(pERecoil) ;
+     fParticleChange->SetProposedKineticEnergy(pERecoil) ;  //if(photonEnergy0-pERecoil > 0.8){G4cout << photonEnergy0-pERecoil << G4endl;}
 
      // Set ejected Compton electron direction and energy
      G4double PhiE = std::acos(cosPhiE);

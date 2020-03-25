@@ -12,6 +12,8 @@
 #include <G4EmCalculator.hh>
 #include <Randomize.hh>
 #include <G4LowEPComptonModel.hh>
+#include "G4ParticleChangeForGamma.hh"
+#include <G4KleinNishinaModel.hh>
 
 using namespace CLHEP; //apparantly bad to do this, cause if gets inherited by everything that includes, might want to change
 
@@ -19,6 +21,7 @@ class Particle
 {
 public:
     Particle();
+    void                  Initialise();
     void                  Reset();
     void                  Print(G4bool extended = false);
     void                  Propagate();
@@ -29,6 +32,7 @@ public:
     std::string           Update_particle(G4double s_scatter, std::string process = "");
     std::string           Select_scatter_process();
     std::vector<G4double> intersect(G4double cyl_outerRadius, G4double cyl_halfZ);
+    G4double              Cut_weight();
 
 private:
     std::vector<G4double> intersect_side( G4ThreeVector x0, G4ThreeVector p, G4double r_cyl, G4double z_cyl);
@@ -36,7 +40,10 @@ private:
     std::vector<G4double> sort_vector(std::vector<G4double> s1, std::vector<G4double> s2);
     G4double              Random_uniform(G4double min, G4double max);
     G4EmCalculator        emCalc;
+    //G4KleinNishinaModel   comp_model = G4KleinNishinaModel();
     G4LowEPComptonModel   comp_model = G4LowEPComptonModel();
+    G4ParticleChangeForGamma    Gammainfo;                                        //storage for new direction and energy
+    std::vector < std::vector < G4double > > photon_LUT;
     
 private:
     //Parameters
@@ -46,7 +53,7 @@ private:
     G4double                   m_weight       = 1;                               //Particle weight
     G4double                   m_energy       = 0;                               //Particle energy
     G4double                   m_edep         = 0;                               //Deposited energy
-    G4double                   m_edep_max     = 100000 * MeV;                    //Max allowed energy deposit
+    G4double                   m_edep_max     = 200    * keV;                    //Max allowed energy deposit
     G4double                   m_prod_cut     = 1      * keV;                    //Energy production cut for Compton
     G4int                      m_nscatter     = 0;                               //No. of scatters (NoS) done
     G4int                      m_nscatter_max = 1;                               //Max allowed NoS

@@ -67,6 +67,7 @@ CMakeFiles/G4simu.dir/G4simu.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4
 CMakeFiles/G4simu.dir/G4simu.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IonisParamMat.hh
 CMakeFiles/G4simu.dir/G4simu.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Isotope.hh
 CMakeFiles/G4simu.dir/G4simu.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IsotopeVector.hh
+CMakeFiles/G4simu.dir/G4simu.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4KleinNishinaModel.hh
 CMakeFiles/G4simu.dir/G4simu.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LPhysicsFreeVector.hh
 CMakeFiles/G4simu.dir/G4simu.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Log.hh
 CMakeFiles/G4simu.dir/G4simu.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LogicalVolume.hh
@@ -133,6 +134,7 @@ CMakeFiles/G4simu.dir/G4simu.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4
 CMakeFiles/G4simu.dir/G4simu.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleChange.hh
 CMakeFiles/G4simu.dir/G4simu.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleChange.icc
 CMakeFiles/G4simu.dir/G4simu.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleChangeForDecay.hh
+CMakeFiles/G4simu.dir/G4simu.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleChangeForGamma.hh
 CMakeFiles/G4simu.dir/G4simu.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.hh
 CMakeFiles/G4simu.dir/G4simu.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.icc
 CMakeFiles/G4simu.dir/G4simu.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleMomentum.hh
@@ -610,6 +612,7 @@ CMakeFiles/G4simu.dir/src/AnalysisManager.cc.o: /cvmfs/sft.cern.ch/lcg/releases/
 CMakeFiles/G4simu.dir/src/AnalysisManager.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4KaonZero.hh
 CMakeFiles/G4simu.dir/src/AnalysisManager.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4KaonZeroLong.hh
 CMakeFiles/G4simu.dir/src/AnalysisManager.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4KaonZeroShort.hh
+CMakeFiles/G4simu.dir/src/AnalysisManager.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4KleinNishinaModel.hh
 CMakeFiles/G4simu.dir/src/AnalysisManager.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LPhysicsFreeVector.hh
 CMakeFiles/G4simu.dir/src/AnalysisManager.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Lambda.hh
 CMakeFiles/G4simu.dir/src/AnalysisManager.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Lambdab.hh
@@ -671,6 +674,7 @@ CMakeFiles/G4simu.dir/src/AnalysisManager.cc.o: /cvmfs/sft.cern.ch/lcg/releases/
 CMakeFiles/G4simu.dir/src/AnalysisManager.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PDefManager.hh
 CMakeFiles/G4simu.dir/src/AnalysisManager.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleChange.hh
 CMakeFiles/G4simu.dir/src/AnalysisManager.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleChange.icc
+CMakeFiles/G4simu.dir/src/AnalysisManager.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleChangeForGamma.hh
 CMakeFiles/G4simu.dir/src/AnalysisManager.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.hh
 CMakeFiles/G4simu.dir/src/AnalysisManager.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.icc
 CMakeFiles/G4simu.dir/src/AnalysisManager.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleMomentum.hh
@@ -1007,11 +1011,13 @@ CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/release
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmSaturation.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ExceptionSeverity.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Exp.hh
+CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4FastVector.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4GeomSplitter.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IonisParamElm.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IonisParamMat.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Isotope.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IsotopeVector.hh
+CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4KleinNishinaModel.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LPhysicsFreeVector.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Log.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LogicalVolume.hh
@@ -1049,6 +1055,7 @@ CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/release
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NuclearFormfactorType.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4OrderedTable.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PDefManager.hh
+CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleChangeForGamma.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.icc
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleMomentum.hh
@@ -1086,6 +1093,7 @@ CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/release
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TouchableHandle.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Track.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Track.icc
+CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TrackFastVector.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TrackStatus.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TrackVector.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Types.hh
@@ -1106,6 +1114,8 @@ CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/release
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmAngularDistribution.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmFluctuationModel.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmModel.hh
+CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VParticleChange.hh
+CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VParticleChange.icc
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VPhysicalVolume.hh
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VPhysicalVolume.icc
 CMakeFiles/G4simu.dir/src/AnalysisMessenger.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VTouchable.hh
@@ -2063,12 +2073,14 @@ CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Event.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ExceptionSeverity.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Exp.hh
+CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4FastVector.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4GeomSplitter.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4HCofThisEvent.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IonisParamElm.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IonisParamMat.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Isotope.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IsotopeVector.hh
+CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4KleinNishinaModel.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LPhysicsFreeVector.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Log.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LogicalVolume.hh
@@ -2106,6 +2118,7 @@ CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NuclearFormfactorType.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4OrderedTable.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PDefManager.hh
+CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleChangeForGamma.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.icc
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleMomentum.hh
@@ -2141,6 +2154,7 @@ CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TouchableHandle.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Track.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Track.icc
+CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TrackFastVector.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TrackStatus.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TrackVector.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TrajectoryContainer.hh
@@ -2152,6 +2166,8 @@ CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmFluctuationModel.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmModel.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VHitsCollection.hh
+CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VParticleChange.hh
+CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VParticleChange.icc
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VPhysicalVolume.hh
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VPhysicalVolume.icc
 CMakeFiles/G4simu.dir/src/EventAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VTouchable.hh
@@ -4103,11 +4119,13 @@ CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4EmSaturation.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ExceptionSeverity.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Exp.hh
+CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4FastVector.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4GeomSplitter.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IonisParamElm.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IonisParamMat.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Isotope.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IsotopeVector.hh
+CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4KleinNishinaModel.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LPhysicsFreeVector.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Log.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LogicalVolume.hh
@@ -4145,6 +4163,7 @@ CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4NuclearFormfactorType.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4OrderedTable.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PDefManager.hh
+CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleChangeForGamma.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.icc
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleMomentum.hh
@@ -4178,6 +4197,7 @@ CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TouchableHandle.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Track.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Track.icc
+CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TrackFastVector.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TrackStatus.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4TrackVector.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Types.hh
@@ -4191,6 +4211,8 @@ CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmAngularDistribution.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmFluctuationModel.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VEmModel.hh
+CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VParticleChange.hh
+CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VParticleChange.icc
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VPhysicalVolume.hh
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VPhysicalVolume.icc
 CMakeFiles/G4simu.dir/src/RunAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4VTouchable.hh
@@ -4692,6 +4714,7 @@ CMakeFiles/G4simu.dir/src/StackingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/L
 CMakeFiles/G4simu.dir/src/StackingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4KaonZero.hh
 CMakeFiles/G4simu.dir/src/StackingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4KaonZeroLong.hh
 CMakeFiles/G4simu.dir/src/StackingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4KaonZeroShort.hh
+CMakeFiles/G4simu.dir/src/StackingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4KleinNishinaModel.hh
 CMakeFiles/G4simu.dir/src/StackingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LPhysicsFreeVector.hh
 CMakeFiles/G4simu.dir/src/StackingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Lambda.hh
 CMakeFiles/G4simu.dir/src/StackingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Lambdab.hh
@@ -4744,6 +4767,7 @@ CMakeFiles/G4simu.dir/src/StackingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/L
 CMakeFiles/G4simu.dir/src/StackingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4PDefManager.hh
 CMakeFiles/G4simu.dir/src/StackingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleChange.hh
 CMakeFiles/G4simu.dir/src/StackingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleChange.icc
+CMakeFiles/G4simu.dir/src/StackingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleChangeForGamma.hh
 CMakeFiles/G4simu.dir/src/StackingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.hh
 CMakeFiles/G4simu.dir/src/StackingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.icc
 CMakeFiles/G4simu.dir/src/StackingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleMomentum.hh
@@ -5013,6 +5037,7 @@ CMakeFiles/G4simu.dir/src/SteppingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/L
 CMakeFiles/G4simu.dir/src/SteppingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IonisParamMat.hh
 CMakeFiles/G4simu.dir/src/SteppingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Isotope.hh
 CMakeFiles/G4simu.dir/src/SteppingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4IsotopeVector.hh
+CMakeFiles/G4simu.dir/src/SteppingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4KleinNishinaModel.hh
 CMakeFiles/G4simu.dir/src/SteppingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LPhysicsFreeVector.hh
 CMakeFiles/G4simu.dir/src/SteppingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4Log.hh
 CMakeFiles/G4simu.dir/src/SteppingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4LogicalVolume.hh
@@ -5066,6 +5091,7 @@ CMakeFiles/G4simu.dir/src/SteppingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/L
 CMakeFiles/G4simu.dir/src/SteppingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParameterisedNavigation.icc
 CMakeFiles/G4simu.dir/src/SteppingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleChange.hh
 CMakeFiles/G4simu.dir/src/SteppingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleChange.icc
+CMakeFiles/G4simu.dir/src/SteppingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleChangeForGamma.hh
 CMakeFiles/G4simu.dir/src/SteppingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.hh
 CMakeFiles/G4simu.dir/src/SteppingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleDefinition.icc
 CMakeFiles/G4simu.dir/src/SteppingAction.cc.o: /cvmfs/sft.cern.ch/lcg/releases/LCG_94/Geant4/10.04.p02/x86_64-centos7-gcc8-opt/include/Geant4/G4ParticleMomentum.hh
