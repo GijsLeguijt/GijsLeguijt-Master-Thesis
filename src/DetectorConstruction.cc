@@ -119,8 +119,13 @@ DetectorConstruction::DefineMaterials()
     G4Material *Air = pNistManager->FindOrBuildMaterial("G4_AIR");
 
     //------------------------------------------- xenon -------------------------------------------
-    G4Element *Xe = pNistManager->FindOrBuildElement("Xe");
+    G4Isotope *iso_Xe = new G4Isotope("Xe131", 54, 131, 131.3*g/mole);
+    G4Element  *Xe = new G4Element("Xe", "Xe", 1);
+    Xe->AddIsotope(iso_Xe, 100.*perCent);
+    
+    //G4Element *Xe = pNistManager->FindOrBuildElement("Xe");
     G4Material *LXe = new G4Material("LXe", 3.0*g/cm3, 1, kStateLiquid);
+    
     LXe->AddElement(Xe, 1.000);
 
     //-------------------------------------- Xenon-Isotopes ---------------------------------------

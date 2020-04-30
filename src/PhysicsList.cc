@@ -45,6 +45,7 @@
 #include "TNamed.h"
 
 #include <vector>
+#include "G4NeutronHPElastic.hh"
 
 using namespace CLHEP;
 

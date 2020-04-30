@@ -187,13 +187,15 @@ AnalysisManager::BeginOfEvent(const G4Event *pEvent)
     G4double      ene = primaryParticle->GetKineticEnergy();
     
     myParticle.Reset();
-
+    
     myParticle.setX0(pos);
     myParticle.setDirection(mom);
     myParticle.setEnergy(ene);
+    myParticle.setEdep_max(20 * MeV);
     myParticle.setX0start(pos);
     myParticle.setVrt("fiducial_scatter");
     myParticle.Propagate();
+    
     m_pEventData->Clear();
     
     _events->cd();
@@ -205,7 +207,7 @@ AnalysisManager::BeginOfEvent(const G4Event *pEvent)
     m_pEventData->m_fPrimaryE_vrt = (myParticle.getEnergy() + myParticle.getEdep()) / keV;
     m_pEventData->m_fPrimaryW_vrt = myParticle.getWeight();
     
-    for (G4int i; i < myParticle.getEdep_int().size(); i++)
+    for (G4int i = 0; i < myParticle.getEdep_int().size(); i++)
     {   
         m_pEventData->m_pDepositingProcess_vrt->push_back(myParticle.getPro_int()[i]);
     

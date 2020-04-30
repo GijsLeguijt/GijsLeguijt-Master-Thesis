@@ -14,6 +14,15 @@
 #include <G4LowEPComptonModel.hh>
 #include "G4ParticleChangeForGamma.hh"
 #include <G4KleinNishinaModel.hh>
+#include <G4Physics2DVector.hh>
+//#include <G4HadronCrossSections.hh>
+#include <G4ParticleDefinition.hh>
+//#include <G4NeutronHPElastic.hh>
+#include <G4ParticleHPElastic.hh>
+#include <G4ParticleHPElasticData.hh>
+#include <G4ParticleHPInelasticData.hh>
+#include <G4ParticleHPCaptureData.hh>
+#include <G4ParticleHPFissionData.hh>
 
 using namespace CLHEP; //apparantly bad to do this, cause if gets inherited by everything that includes, might want to change
 
@@ -28,11 +37,12 @@ public:
     void                  Save_interaction(G4ThreeVector position, G4double deposit, std::string process);
     G4double              Get_att_probability(G4double distance);
     G4double              Do_compton();
+    G4double              Do_elastic();
     G4double              Generate_interaction_point(G4double smax = -1);
     std::string           Update_particle(G4double s_scatter, std::string process = "");
     std::string           Select_scatter_process();
     std::vector<G4double> intersect(G4double cyl_outerRadius, G4double cyl_halfZ);
-    G4double              Cut_weight();
+    G4double              Att_length_neutron();
 
 private:
     std::vector<G4double> intersect_side( G4ThreeVector x0, G4ThreeVector p, G4double r_cyl, G4double z_cyl);
@@ -40,14 +50,25 @@ private:
     std::vector<G4double> sort_vector(std::vector<G4double> s1, std::vector<G4double> s2);
     G4double              Random_uniform(G4double min, G4double max);
     G4EmCalculator        emCalc;
+    //G4HadronCrossSections neutronXS = G4HadronCrossSections();
+    G4ParticleHPElasticData neutronXS_ela = G4ParticleHPElasticData();
+    G4ParticleHPInelasticData neutronXS_ine = G4ParticleHPInelasticData();
+    G4ParticleHPFissionData neutronXS_fis = G4ParticleHPFissionData();
+    G4ParticleHPCaptureData neutronXS_cap = G4ParticleHPCaptureData();
     //G4KleinNishinaModel   comp_model = G4KleinNishinaModel();
     G4LowEPComptonModel   comp_model = G4LowEPComptonModel();
+    //G4NeutronHPElastic elas_model = G4NeutronHPElastic();
+    G4ParticleHPElastic elas_model = G4ParticleHPElastic();
     G4ParticleChangeForGamma    Gammainfo;                                        //storage for new direction and energy
     std::vector < std::vector < G4double > > photon_LUT;
+    G4Physics2DVector photon_LUT_int = G4Physics2DVector(500,18);
+    const G4ParticleDefinition* part_def;
+    std::vector <G4int> Select_Isotope();
+    
     
 private:
     //Parameters
-    std::string                m_type         = "gamma";                         //Particle type
+    std::string                m_type         = "neutron";                         //Particle type
     std::string                m_vrt          = "";                              //Variance Reduction Technique 
     G4bool                     m_debug        = false;                           //To print progress
     G4double                   m_weight       = 1;                               //Particle weight

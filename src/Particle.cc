@@ -3,6 +3,8 @@
 #include "DetectorConstruction.hh"
 #include <G4EmCalculator.hh>
 #include <G4Material.hh>
+#include <G4Element.hh>
+#include <G4Isotope.hh>
 #include <RunAction.hh>
 #include <Randomize.hh>
 #include <G4KleinNishinaModel.hh>
@@ -13,6 +15,9 @@
 #include <G4ParticleDefinition.hh>
 #include <G4ParticleTable.hh>
 #include <G4DataVector.hh>
+#include <G4Nucleus.hh>
+#include <G4HadProjectile.hh>
+//#include <G4NeutronHPElastic.hh>
 
 #include <cmath>
 #include <iostream>
@@ -24,6 +29,10 @@
 #include "G4ParticleChangeForGamma.hh"
 #include "G4VEmModel.hh"
 #include "G4ProductionCutsTable.hh"
+#include <G4StepPoint.hh>
+#include <G4Step.hh>
+#include <G4HadronCrossSections.hh>
+
 
 //__________________________________________________________________________________________________________
 
@@ -43,20 +52,20 @@ void Particle::Initialise()
     //ComputeCrossSectionPerAtom, which doesn't use it
     size_t           x = 1; //can't be zero
     G4DataVector  cuts = {x, 0};
-    const G4ParticleDefinition* part_def = G4ParticleTable::GetParticleTable()->FindParticle(m_type);
+    part_def = G4ParticleTable::GetParticleTable()->FindParticle(m_type);
 
     G4ParticleChangeForGamma * pGammainfo = &Gammainfo;
     comp_model.SetParticleChange(pGammainfo);                                          //makes sure it uses correct storage
 
     comp_model.Initialise(part_def, cuts);
     
-    m_type         = "gamma";
+    m_type         = "neutron";
     m_vrt          = "";
     m_debug        = false;
     m_weight       = 1;
     m_energy       = 0;
     m_edep         = 0;
-    m_edep_max     = 200    * keV;
+    m_edep_max     = 100     * MeV;
     m_prod_cut     = 1      * keV;
     m_nscatter     = 0;
     m_nscatter_max = 1;
@@ -69,7 +78,11 @@ void Particle::Initialise()
     m_pos_int      = {};
     m_pro_int      = {};
 
-    /* Reading in the LookUpTable for photons*/
+    //part_def = G4ParticleTable::GetParticleTable()->FindParticle(m_type);
+
+    //
+    // Reading in the LookUpTable for photons
+    //
     std::ifstream file ("LUT_photon.csv");
 	
 	std::string row, value;                                 //entire row and individual values
@@ -90,6 +103,30 @@ void Particle::Initialise()
 		photon_LUT.push_back(LUT_row);		
     	
 	}
+
+    //
+    // Converting LUT to interpolated version
+    //
+    for (G4int i = 0; i < photon_LUT[0].size(); i++){
+        G4double LUT_ephot = 150 * keV + i * 50 * keV;      //putting y-scale = Ephot
+        photon_LUT_int.PutY(i,LUT_ephot); 
+    }
+    
+    for (G4int i = 0; i < photon_LUT.size(); i++){
+        G4double LUT_ecut = (i+1) * 2 * keV;                //putting x-scale = cuts
+        photon_LUT_int.PutX(i,LUT_ecut);
+
+        for (G4int j = 0; j < photon_LUT[i].size(); j++){
+            photon_LUT_int.PutValue(i,j,photon_LUT[i][j]);  //putting values = fractions
+        }
+    }
+
+    //Building cross-section tables for neutrons
+    elas_model.BuildPhysicsTable(*part_def);
+    neutronXS_ela.BuildPhysicsTable(*part_def);
+    neutronXS_ine.BuildPhysicsTable(*part_def);
+    neutronXS_fis.BuildPhysicsTable(*part_def);
+    neutronXS_cap.BuildPhysicsTable(*part_def);
 }
 
 //__________________________________________________________________________________________________________
@@ -249,7 +286,16 @@ G4double Particle::Get_att_probability(G4double distance)
      * Get the probability for a particle of energy "m_energy", to travel distance
      */
 
-    G4double mu = emCalc.ComputeGammaAttenuationLength(m_energy, m_material);
+    G4double mu = 0;
+
+    if (m_type == "gamma")
+    {
+        mu = emCalc.ComputeGammaAttenuationLength(m_energy, m_material);
+    }
+    else if (m_type == "neutron")
+    {
+        mu = Att_length_neutron();
+    }
 
     G4double prob = exp(- distance / mu);
 
@@ -263,7 +309,7 @@ void Particle::Propagate()
 {   /*
      * Propagates the particle
      */
-
+    
     // Get the dimensions of the cylinders, the LXe-volume and the fiducial volume (FV)
     const G4double LXeouterRadius =       DetectorConstruction::GetGeometryParameter("LXe_outerR");
     const G4double LXeHalfZ       = 0.5 * DetectorConstruction::GetGeometryParameter("LXe_Z");
@@ -343,9 +389,7 @@ void Particle::Propagate()
                     }
                 }
                 else if (m_nscatter == m_nscatter_max) // particle not allowed to scatter more, calculate chance to exit
-                {        
-                    //s_max = cryostat_intersections[0]; // was in python code, seems redundant
-
+                {      
                     m_weight *= Get_att_probability(s_max); // chance to leave the detector without more interactions  
                     terminate = true;
                     continue;
@@ -360,7 +404,7 @@ void Particle::Propagate()
             {   // scatter the particle, either PE or compton
                 std::string process = Update_particle(s_gen);
                  
-                if (process == "pho") // energy deposit is too high, not interested
+                if (process == "pho") // all energy spend
                 {
                     terminate = true;
                 }
@@ -392,8 +436,18 @@ G4double Particle::Generate_interaction_point(G4double smax) //default for smax 
      * argument smax = maximal path length to generate, default is "-1" (= infinite)
      */
 
-    // Get the attenuation length for the photon
-    G4double   mu = emCalc.ComputeGammaAttenuationLength(m_energy, m_material);
+    G4double mu = 0;
+    
+    // Get the attenuation length
+    if (m_type == "gamma")
+    {
+        mu = emCalc.ComputeGammaAttenuationLength(m_energy, m_material);
+    }
+    else if (m_type == "neutron")
+    {
+        mu = Att_length_neutron();
+    }
+    
     G4double rmax = 1; // sets the range for the chosen random number, updated if there is a limit on s
     
     if (smax > 0.0) // calculate the range to fulfill smax, also update the weight
@@ -425,22 +479,29 @@ std::string Particle::Update_particle(G4double s_scatter, std::string process)//
     m_x0 += s_scatter * m_direction; //get to the new position
     G4double edep;
 
-    if (process == "inc")
+    if (process == "inc") //for photons
     {   //Inverse Compton scattering
         edep = Do_compton();
 
         Save_interaction(m_x0, edep, process); //save interaction data
     }
-    else if (process == "pho")
+    else if (process == "pho") //for photons
     {   //Photo-electric effect, all energy is deposited
         edep        = m_energy;
         m_nscatter += 1;
         m_edep     += edep;
+        m_edep_max -= edep;
         m_energy    = 0;
 
         Save_interaction(m_x0, edep, process); //save interaction data
     }
-    else if (process == "transport")
+    else if (process == "ela") //for neutrons
+    {   //Elastic scattering
+        edep = Do_elastic();
+
+        Save_interaction(m_x0, edep, process);
+    }
+    else if (process == "transport") //for both
     {   //Just transportation, nothing additional happens
     }
     else
@@ -462,39 +523,86 @@ std::string Particle::Select_scatter_process()
 
     std::string process;
 
-    // Cross-sections for compton and PE, units don't matter as we need a fraction    
-    G4double sigma_compt = emCalc.ComputeCrossSectionPerVolume(m_energy,m_type,"compt",m_material->GetName(),0);
-    G4double sigma_phot  = emCalc.ComputeCrossSectionPerVolume(m_energy,m_type,"phot", m_material->GetName(),0);
-    G4double sigma_total = sigma_compt + sigma_phot;
-    
-    G4double frac        = sigma_compt / sigma_total;
+    G4double sigma_compt, sigma_phot, sigma_ela, sigma_total, frac;
 
-    if (m_edep_max < m_energy)
-    // if the maximum energy deposit is smaller than the total kinetic energy, PE is off and the weight updated
-    {    
-        process   = "inc";
-        m_weight *= frac;
-    }
-    else
+    if (m_type == "gamma")
     {
-        G4double r = Random_uniform(0.0, 1.0); // select process based on relative cross-section
-        
-        if (r < frac)
-        {   process  = "inc";
-        }
-        else
-        {    process = "pho";
-        }
+        // Cross-sections for compton and PE, units don't matter as we need a fraction    
+        sigma_compt = emCalc.ComputeCrossSectionPerVolume(m_energy,m_type,"compt",m_material->GetName(),0);
+        sigma_phot  = emCalc.ComputeCrossSectionPerVolume(m_energy,m_type,"phot", m_material->GetName(),0);
+        sigma_total = sigma_compt + sigma_phot;
+    
+        frac        = sigma_compt / sigma_total;
 
-        
-        if (m_vrt == "fiducial_scatter" && m_nscatter < m_nscatter_max - 1)
-        // if we require multiple scatters, PE is not allowed until required number of scatters is reached
-        {   process   = "inc";
+        if (m_edep_max < m_energy)
+        // if the maximum energy deposit is smaller than the total kinetic energy, PE is off and the weight updated
+        {    
+            process   = "inc";
             m_weight *= frac;
         }
+        else
+        {
+            G4double r = Random_uniform(0.0, 1.0); // select process based on relative cross-section
+        
+            if (r < frac)
+            {   process  = "inc";
+            }
+            else
+            {    process = "pho";
+            }
+
+        
+            if (m_vrt == "fiducial_scatter" && m_nscatter < m_nscatter_max - 1)
+            // if we require multiple scatters, PE is not allowed until required number of scatters is reached
+            {   process   = "inc";
+                m_weight *= frac;
+            }
+        }
+    }
+    else if (m_type == "neutron")
+    {   
+        G4DynamicParticle * ppart_dyn = new G4DynamicParticle(part_def,m_direction,m_energy);
+        G4double temp = m_material->GetTemperature();
+        G4Element *ele = G4Element::GetElement("Xe");
+
+        sigma_ela    = neutronXS_ela.GetCrossSection(ppart_dyn,ele,temp);
+        sigma_total  = sigma_ela;
+        sigma_total += neutronXS_ine.GetCrossSection(ppart_dyn,ele,temp);
+        sigma_total += neutronXS_fis.GetCrossSection(ppart_dyn,ele,temp);
+        sigma_total += neutronXS_cap.GetCrossSection(ppart_dyn,ele,temp);
+
+        frac = sigma_ela / sigma_total;
+        
+        process = "ela";
+        m_weight *= frac;
     }
 
     return process;
+}
+
+//__________________________________________________________________________________________________________
+
+G4double Particle::Att_length_neutron()
+{
+    G4double sigma_total, n, rho, N_A;
+    
+    N_A = 6.022 * pow(10,23); //Avogadro's number
+
+    G4DynamicParticle * ppart_dyn = new G4DynamicParticle(part_def,m_direction,m_energy);
+    G4double temp = m_material->GetTemperature();
+    G4Element *ele = G4Element::GetElement("Xe");
+
+    sigma_total  = neutronXS_ela.GetCrossSection(ppart_dyn,ele,temp);
+    sigma_total += neutronXS_ine.GetCrossSection(ppart_dyn,ele,temp);
+    sigma_total += neutronXS_fis.GetCrossSection(ppart_dyn,ele,temp);
+    sigma_total += neutronXS_cap.GetCrossSection(ppart_dyn,ele,temp);
+
+    sigma_total /= (meter * meter);
+    rho = m_material->GetDensity() / (gram / (meter * meter * meter));
+    
+    n = rho * N_A / 131.3;
+
+    return 1 / (sigma_total * n) * meter;
 }
 
 //__________________________________________________________________________________________________________
@@ -527,9 +635,6 @@ G4double Particle::Do_compton()
     G4double maxEnergy = 0;
     //------------------------------------------------------------------------------------------------------
     
-    
-    const G4ParticleDefinition* part_def = G4ParticleTable::GetParticleTable()->FindParticle(m_type);
-
     //
     //Make the photon that will scatter and a storage for the scattered electron
     //
@@ -548,12 +653,11 @@ G4double Particle::Do_compton()
     G4ProductionCuts          * pprod_cuts = pmat_cuts->GetProductionCuts();
     pprod_cuts->SetProductionCut(m_prod_cut);                                                    //overwriting the table
 
-    G4int tries = 0;
     G4double new_energy;
     G4double edep;
     //do the scattering
     do
-    {   tries++;
+    {  
         comp_model.SampleSecondaries(pvec_elec, pmat_cuts, ppart_dyn, tmin, maxEnergy);
         
         new_energy = Gammainfo.GetProposedKineticEnergy();
@@ -567,12 +671,61 @@ G4double Particle::Do_compton()
     //saving data to the particle    
     m_direction         = Gammainfo.GetProposedMomentumDirection();
     
-    m_weight     *= Cut_weight();
+    m_weight     *= photon_LUT_int.Value(m_edep_max,m_energy);
     m_edep       += edep;
+    m_edep_max   -= edep;
     m_energy      = new_energy;          
     m_nscatter   += 1;
     
     return edep;
+}
+
+//__________________________________________________________________________________________________________
+
+G4double Particle::Do_elastic()
+{   /*
+    * Make G4Nucleus of Xenon
+    * 
+    * Make dynamic particle of neutron
+    * Make G4HadProjectile from dynamic particle
+    * 
+    * Apply G4NeutronHPElasticXS
+    * G4HadronCrossSections
+    *
+    */
+    std::vector <G4int> isotope = Select_Isotope();
+    G4Nucleus target = G4Nucleus(131,isotope[1]); //A,Z
+
+    G4StepPoint * steppoint = new G4StepPoint();
+    steppoint->SetMaterial(m_material);
+
+    G4Step * step = new G4Step();
+    step->SetPreStepPoint(steppoint);
+
+    //
+    //Make the neutron that will scatter
+    //
+    G4double time = 0;
+    G4DynamicParticle * ppart_dyn = new G4DynamicParticle(part_def,m_direction,m_energy);
+    G4Track track = G4Track(ppart_dyn, time, m_x0);
+    track.SetStep(step);
+    
+    G4HadProjectile projectile = G4HadProjectile(track);
+    G4cout << "Old: " << (&target)->GetA_asInt() << G4endl;
+    G4HadFinalState * finalstate = elas_model.ApplyYourself(projectile,target);
+    G4cout << "New: " << (&target)->GetA_asInt() << G4endl;
+    G4double new_energy = finalstate->GetEnergyChange();
+    m_direction         = finalstate->GetMomentumChange();
+    
+    G4double edep = m_energy - new_energy;
+
+    m_edep += edep;
+    m_edep_max -= edep;
+    m_energy = new_energy;
+    m_nscatter += 1;
+
+    return edep;        
+
 }
 
 //__________________________________________________________________________________________________________
@@ -589,27 +742,54 @@ void Particle::Save_interaction(G4ThreeVector position, G4double deposit, std::s
 
 //__________________________________________________________________________________________________________
 
-G4double Particle::Cut_weight()
-{   
-    std::vector < std::vector < G4double > > LUT;
-    G4int row, column;
+std::vector <G4int> Particle::Select_Isotope()
+{
+    G4int Z, A;
 
-    if (m_edep_max > 1 * MeV){
-        return 1;
+    //const G4Element * element = m_material->GetElement(0);
+
+    //size_t n_isotope = element->GetNumberOfIsotopes();
+
+    //G4int i_isotope = std::floor(3 + (n_isotope-3) * G4UniformRand());
+
+    //const G4Isotope * isotope = element->GetIsotope(i_isotope);
+
+    //Z = isotope->GetZ();
+    //A = isotope->GetN();
+
+    G4double test = Random_uniform(0.0, 1.0);
+
+    Z = 54;
+    if (test < 0.001){
+        A = 124;
+    }
+    else if (test < 0.002){
+        A = 126;
+    }
+    else if (test < 0.021){
+        A = 128;
+    }
+    else if (test < 0.285){
+        A = 129;
+    }
+    else if (test < 0.326){
+        A = 130;
+    }
+    else if (test < 0.538){
+        A = 131;
+    }
+    else if (test < 0.807){
+        A = 132;
+    }
+    else if (test < 0.911){
+        A = 134;
+    }
+    else {
+        A = 136;
     }
 
-    if (m_type == "gamma"){
-        LUT = photon_LUT;
-    }
-
-    column = (m_energy * 1000 - 150) / 50;
-    row = (m_edep_max * 1000 - 2) / 2;
-
-    G4double frac = LUT[row][column];
-
-    return frac;   
+    return {A,Z};
 }
-
 
 /* To do:
 Zoeken op "look into this!"

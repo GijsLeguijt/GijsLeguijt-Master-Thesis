@@ -412,6 +412,60 @@ src/G4LowEPComptonModel.cc.s:
 	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/G4LowEPComptonModel.cc.s
 .PHONY : src/G4LowEPComptonModel.cc.s
 
+src/G4NeutronHPElastic.o: src/G4NeutronHPElastic.cc.o
+
+.PHONY : src/G4NeutronHPElastic.o
+
+# target to build an object file
+src/G4NeutronHPElastic.cc.o:
+	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/G4NeutronHPElastic.cc.o
+.PHONY : src/G4NeutronHPElastic.cc.o
+
+src/G4NeutronHPElastic.i: src/G4NeutronHPElastic.cc.i
+
+.PHONY : src/G4NeutronHPElastic.i
+
+# target to preprocess a source file
+src/G4NeutronHPElastic.cc.i:
+	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/G4NeutronHPElastic.cc.i
+.PHONY : src/G4NeutronHPElastic.cc.i
+
+src/G4NeutronHPElastic.s: src/G4NeutronHPElastic.cc.s
+
+.PHONY : src/G4NeutronHPElastic.s
+
+# target to generate assembly for a file
+src/G4NeutronHPElastic.cc.s:
+	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/G4NeutronHPElastic.cc.s
+.PHONY : src/G4NeutronHPElastic.cc.s
+
+src/G4NeutronHPElasticData.o: src/G4NeutronHPElasticData.cc.o
+
+.PHONY : src/G4NeutronHPElasticData.o
+
+# target to build an object file
+src/G4NeutronHPElasticData.cc.o:
+	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/G4NeutronHPElasticData.cc.o
+.PHONY : src/G4NeutronHPElasticData.cc.o
+
+src/G4NeutronHPElasticData.i: src/G4NeutronHPElasticData.cc.i
+
+.PHONY : src/G4NeutronHPElasticData.i
+
+# target to preprocess a source file
+src/G4NeutronHPElasticData.cc.i:
+	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/G4NeutronHPElasticData.cc.i
+.PHONY : src/G4NeutronHPElasticData.cc.i
+
+src/G4NeutronHPElasticData.s: src/G4NeutronHPElasticData.cc.s
+
+.PHONY : src/G4NeutronHPElasticData.s
+
+# target to generate assembly for a file
+src/G4NeutronHPElasticData.cc.s:
+	$(MAKE) -f CMakeFiles/G4simu.dir/build.make CMakeFiles/G4simu.dir/src/G4NeutronHPElasticData.cc.s
+.PHONY : src/G4NeutronHPElasticData.cc.s
+
 src/Particle.o: src/Particle.cc.o
 
 .PHONY : src/Particle.o
@@ -749,6 +803,12 @@ help:
 	@echo "... src/G4LowEPComptonModel.o"
 	@echo "... src/G4LowEPComptonModel.i"
 	@echo "... src/G4LowEPComptonModel.s"
+	@echo "... src/G4NeutronHPElastic.o"
+	@echo "... src/G4NeutronHPElastic.i"
+	@echo "... src/G4NeutronHPElastic.s"
+	@echo "... src/G4NeutronHPElasticData.o"
+	@echo "... src/G4NeutronHPElasticData.i"
+	@echo "... src/G4NeutronHPElasticData.s"
 	@echo "... src/Particle.o"
 	@echo "... src/Particle.i"
 	@echo "... src/Particle.s"
