@@ -64,6 +64,8 @@ private:
     G4Physics2DVector photon_LUT_int = G4Physics2DVector(500,18);
     const G4ParticleDefinition* part_def;
     std::vector <G4int> Select_Isotope();
+    //void elastic_direction(G4double energy0, G4double e_dep);
+    void elastic_direction(G4ThreeVector direction);
     
     
 private:

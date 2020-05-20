@@ -572,6 +572,7 @@ std::string Particle::Select_scatter_process()
         sigma_total += neutronXS_cap.GetCrossSection(ppart_dyn,ele,temp);
 
         frac = sigma_ela / sigma_total;
+        //G4cout << "Frac: " << frac << G4endl;
         
         process = "ela";
         m_weight *= frac;
@@ -601,6 +602,8 @@ G4double Particle::Att_length_neutron()
     rho = m_material->GetDensity() / (gram / (meter * meter * meter));
     
     n = rho * N_A / 131.3;
+
+    //G4cout << "Att length: " << 1 / (sigma_total * n) << G4endl;
 
     return 1 / (sigma_total * n) * meter;
 }
@@ -694,7 +697,7 @@ G4double Particle::Do_elastic()
     *
     */
     std::vector <G4int> isotope = Select_Isotope();
-    G4Nucleus target = G4Nucleus(131,isotope[1]); //A,Z
+    G4Nucleus target = G4Nucleus(isotope[0],isotope[1]); //A,Z
 
     G4StepPoint * steppoint = new G4StepPoint();
     steppoint->SetMaterial(m_material);
@@ -711,13 +714,22 @@ G4double Particle::Do_elastic()
     track.SetStep(step);
     
     G4HadProjectile projectile = G4HadProjectile(track);
-    G4cout << "Old: " << (&target)->GetA_asInt() << G4endl;
-    G4HadFinalState * finalstate = elas_model.ApplyYourself(projectile,target);
-    G4cout << "New: " << (&target)->GetA_asInt() << G4endl;
-    G4double new_energy = finalstate->GetEnergyChange();
-    m_direction         = finalstate->GetMomentumChange();
     
+    G4HadFinalState * finalstate = elas_model.ApplyYourself(projectile,target);
+    
+    G4double inprod = m_direction.x() * finalstate->GetMomentumChange().x() + m_direction.y() * finalstate->GetMomentumChange().y() + m_direction.z() * finalstate->GetMomentumChange().z();
+
+    G4double new_energy = finalstate->GetEnergyChange();
+    //m_direction         = finalstate->GetMomentumChange();
+
     G4double edep = m_energy - new_energy;
+
+    /*if(edep>0.025){
+        G4cout << "E: " << edep << ", cos theta: " << inprod << G4endl;
+        G4cout << "x: " << m_direction.x() << ", y: " << m_direction.y()<< ", z: " << m_direction.z() << G4endl;}
+*/
+    //elastic_direction(m_energy, edep);
+    elastic_direction(finalstate->GetMomentumChange());
 
     m_edep += edep;
     m_edep_max -= edep;
@@ -789,6 +801,62 @@ std::vector <G4int> Particle::Select_Isotope()
     }
 
     return {A,Z};
+}
+
+//void Particle::elastic_direction(G4double energy0, G4double e_dep)
+void Particle::elastic_direction(G4ThreeVector direction)
+{
+    /*G4double m_n = 1;
+    G4double m_xe = 131.3;
+
+    G4double prefac = (4 * m_n * m_xe) / (m_n + m_xe) / (m_n + m_xe);
+
+    G4double sign_cos = 1;
+    if (Random_uniform(0,1) > 0.5) {sign_cos = -1;}
+    G4double sign_sin = 1;
+    if (Random_uniform(0,1) > 0.5) {sign_sin = -1;}
+    
+
+    G4double cts = sign_cos * sqrt(e_dep / (energy0 * prefac)); //cos(theta_scatter)
+    G4double sts = sign_sin * sqrt(1.0 - cts * cts); //sin(theta_scatter)
+
+    G4double phi_s = Random_uniform(0.0, (atan(1) * 4));
+    
+    G4double cps = cos (phi_s); //cos(phi_scatter)
+    G4double sps = sin (phi_s); //sin(phi_scatter)
+    */
+
+    G4double theta_s = acos(direction.z());
+    G4double phi_s = atan2(direction.y(),direction.x());
+
+    G4double cts = cos(theta_s); //cos(theta)
+    G4double sts = sin(theta_s); //sin(theta)
+    G4double cps = cos(phi_s);   //cos(phi)
+    G4double sps = sin(phi_s);   //sin(phi)
+
+    G4double xs = sts * cps; //x_scatter
+    G4double ys = sts * sps; //y_scatter
+    G4double zs = cts;       //z_scatter
+ 
+    //-----------------------------------------------------
+
+    G4double theta = acos(m_direction.z());
+    G4double phi = atan2(m_direction.y(),m_direction.x());
+    
+    G4double ct = cos(theta); //cos(theta)
+    G4double st = sin(theta); //sin(theta)
+    G4double cp = cos(phi);   //cos(phi)
+    G4double sp = sin(phi);   //sin(phi)
+    
+    G4double xnew = ct * cp * xs - sp * ys + st * cp * zs;
+    G4double ynew = ct * sp * xs + cp * ys + st * sp * zs;
+    G4double znew = - st * xs + ct * zs;
+
+    //m_direction.x() = xnew;
+    //m_direction.y() = ynew;
+    //m_direction.z() = znew;
+    m_direction = G4ThreeVector(xnew,ynew,znew);
+
 }
 
 /* To do:
